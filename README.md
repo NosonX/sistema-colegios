@@ -11,7 +11,6 @@ para colegios públicos basado en los requerimientos dados por el profesor.
 * Dannier Marín Pérez
 * Alfredo Esteban Morales Fallas
 
----
 ## Correr proyecto localmente
 
 ### Requerimientos previos
@@ -36,9 +35,7 @@ para colegios públicos basado en los requerimientos dados por el profesor.
 5. Iniciar el servidor local
 6. Navegar a http://localhost:8080/sistema-colegios (cambiar 8080 si es necesario por el puerto configurado en su servidor local)
 
----
-
-### Estructura de carpetas
+## Estructura de carpetas
     .
     ├── ...
     ├── .gitignore
