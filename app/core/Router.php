@@ -21,7 +21,7 @@ class Router {
     }
 
     public function run() {
-        $uri = $_REQUEST['uri'] ?? '';
+        $uri = $this->getUri();
         $httpMethod = $_SERVER['REQUEST_METHOD'];
         $routes = $this->routes[$httpMethod];
         $uriParams = $this->getParams();
@@ -86,5 +86,15 @@ class Router {
         }
 
         return $uriParams;
+    }
+
+    public function getUri(): string {
+        $uri = '/'.($_REQUEST['uri'] ?? '');
+
+        if (strlen($uri) > 1 && substr($uri, -1) == '/') {
+            $uri = substr_replace($uri, '', -1);
+        }
+
+        return $uri;
     }
 }
