@@ -20,8 +20,11 @@ para colegios públicos basado en los requerimientos dados por el profesor.
   * WAMP - https://www.wampserver.com/en/
 * PHP v7.4.21 o superior (no soporta v8)
 * MySQL v5.7.34
-* Composer - https://getcomposer.org/download/
 * Git - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+* Composer - https://getcomposer.org/download/
+* Node.js v16.15.0 (Se recomienda usar nvm)
+  * Windows: https://github.com/coreybutler/nvm-windows
+  * MacOS: https://github.com/nvm-sh/nvm
 
 ### Pasos
 1. Navegar a la carpeta `htdocs` desde la terminal. 
