@@ -11,5 +11,6 @@ $router = new Router();
 $router->addRoute(new Route(HttpMethod::$GET, 'admins', AdminController::class, 'getAll'));
 $router->addRoute(new Route(HttpMethod::$POST, 'admins', AdminController::class, 'create'));
 $router->addRoute(new Route(HttpMethod::$GET, 'profesores', TeacherController::class, 'getAll'));
+$router->addRoute(new Route(HttpMethod::$GET, 'profesores/$id', TeacherController::class, 'getOne'));
 
 $router->run();
