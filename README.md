@@ -27,6 +27,7 @@ para colegios públicos basado en los requerimientos dados por el profesor.
   * MacOS: https://github.com/nvm-sh/nvm
 
 ### Pasos
+
 1. Navegar a la carpeta `htdocs` desde la terminal. 
    - La carpeta está ubicada en la instalación de su servidor local (MAMP ,XAMPP, etc).
    - En MacOS se puede usar: `cd /Applications/MAMP/htdocs`
