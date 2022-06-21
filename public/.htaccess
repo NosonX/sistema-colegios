@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    Options -Multiviews
+    RewriteEngine On
+    RewriteBase /sistema-colegios/public
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(?!assets)(.+)$ index.php?uri=$1 [QSA,L]
+</IfModule>
