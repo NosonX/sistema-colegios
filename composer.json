@@ -22,5 +22,7 @@
             "email": "cambiar@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "smarty/smarty": "^4.1"
+    }
 }
