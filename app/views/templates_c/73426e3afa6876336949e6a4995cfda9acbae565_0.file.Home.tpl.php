@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-06-25 04:01:50
+/* Smarty version 4.1.1, created on 2022-06-25 04:35:44
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62b688aeef3393_28595936',
+  'unifunc' => 'content_62b690a01b6dc5_33933664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73426e3afa6876336949e6a4995cfda9acbae565' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Home.tpl',
-      1 => 1656129708,
+      1 => 1656131743,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b688aeef3393_28595936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62b690a01b6dc5_33933664 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -29,6 +29,7 @@ function content_62b688aeef3393_28595936 (Smarty_Internal_Template $_smarty_tpl)
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
+    <link rel="stylesheet" href="./public/assets/css/main.css">
 </head>
 <body>
     <h1>Homepage - <?php echo $_smarty_tpl->tpl_vars['nombre']->value;?>
@@ -37,6 +38,10 @@ function content_62b688aeef3393_28595936 (Smarty_Internal_Template $_smarty_tpl)
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi architecto cum cumque cupiditate delectus, dolorum facere harum incidunt iusto laudantium maiores modi molestias nobis ratione sint sit ullam vel.
     </p>
+
+    <?php echo '<script'; ?>
+ src="./public/assets/js/main.js"><?php echo '</script'; ?>
+>
 </body>
 </html><?php }
 }

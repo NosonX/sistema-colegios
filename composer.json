@@ -1,6 +1,6 @@
 {
     "name": "eduardoalfaro/sistema-colegios",
-    "description": "Proyecto final de la clase de programación III de la UNiversidad Hispanoamericana, 2do Cuatrimestre del 2022.",
+    "description": "Proyecto final de la clase de programación III de la Universidad Hispanoamericana, 2do Cuatrimestre del 2022.",
     "type": "project",
     "license": "MIT",
     "autoload": {
