@@ -1,0 +1,26 @@
+{
+    "name": "eduardoalfaro/sistema-colegios",
+    "description": "Proyecto final de la clase de programación III de la UNiversidad Hispanoamericana, 2do Cuatrimestre del 2022.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Eduardoalfaro\\SistemaColegios\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eduardo Alfaro",
+            "email": "eam2092@gmail.com"
+        },
+        {
+            "name": "Dannier Marín",
+            "email": "danni.marin@outlook.com"
+        },
+        {
+            "name": "Alfredo Morales",
+            "email": "cambiar@gmail.com"
+        }
+    ],
+    "require": {}
+}
