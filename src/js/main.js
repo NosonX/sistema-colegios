@@ -1,1 +1,3 @@
-console.log('Este es el main');
+import '@popperjs/core';
+import 'bootstrap/dist/js/bootstrap';
+import './modules/bootstrap';

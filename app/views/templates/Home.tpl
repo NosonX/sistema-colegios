@@ -13,7 +13,12 @@
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi architecto cum cumque cupiditate delectus, dolorum facere harum incidunt iusto laudantium maiores modi molestias nobis ratione sint sit ullam vel.
     </p>
-
+    <button type="button" class="btn btn-secondary"
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            title="This top tooltip is themed via CSS variables.">
+        Custom tooltip
+    </button>
     <script src="./public/assets/js/main.js"></script>
 </body>
 </html>
