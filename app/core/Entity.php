@@ -3,6 +3,7 @@
 namespace app\core;
 
 use PDO;
+use ReflectionClass;
 use ReflectionProperty;
 
 abstract class Entity {
@@ -25,6 +26,17 @@ abstract class Entity {
         $class = get_called_class();
         $entity = new $class();
         return $entity->table;
+    }
+
+    public static function getColumns() {
+        $class = get_called_class();
+        $reflected = new ReflectionClass(new $class());
+        $properties = $reflected->getProperties(\ReflectionProperty::IS_PUBLIC);
+        $columns = [];
+        foreach ($properties as $property) {
+            $columns[] = $property->getName();
+        }
+        return $columns;
     }
 
     public static function resultToEntity($result)
@@ -71,5 +83,39 @@ abstract class Entity {
         }
 
         return null;
+    }
+
+
+    public function getProperties() {
+        $properties = call_user_func('get_object_vars', $this);
+        $columns = self::getColumns();
+        $params = [];
+        foreach ($columns as $column) {
+            $params[$column] = $properties[$column] ?? null;
+        }
+        return $params;
+    }
+
+    public function save() {
+        $db = self::getConnection();
+        $table = self::getTableName();
+        $properties = $this->getProperties();
+        if (isset($this->id)) {
+            $set = [];
+            foreach ($properties as $key => $value) {
+                $set[] = $key.'=:'.$key;
+            }
+            $set = implode(', ', $set);
+            $sql = 'UPDATE '.$table.' SET '.$set.' WHERE id='.$this->id;
+        }
+        else {
+            $columns = implode(', ', array_keys($properties));
+            $paramNames = ':'.implode(', :', array_keys($properties));
+            $sql = 'INSERT INTO '.$table.' ('.$columns.') VALUES ('.$paramNames.')';
+        }
+
+        $statement = $db->prepare($sql);
+        $result = $statement->execute($properties);
+        var_dump($result);
     }
 }

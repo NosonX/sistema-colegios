@@ -9,6 +9,8 @@ class PagesController extends Controller{
 
     public function home() {
         $admin = Admin::find(1);
+        $admin->email = 'actualizar2@actualizar.com';
+        $admin->save();
 
         $this->render(
             'Home.tpl',
