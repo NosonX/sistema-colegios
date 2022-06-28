@@ -2,6 +2,8 @@
 
 class Autoload {
     public function load() {
+        require_once __DIR__ . '/../vendor/autoload.php';
+
         $this->loadFiles('core');
         $this->loadFiles('models');
         $this->loadFiles('views');
