@@ -2,6 +2,13 @@
 
 namespace app\models;
 
-class AdminModel {
+use app\core\Entity;
 
+class AdminModel extends Entity{
+    protected string $table = 'administrador';
+
+    public int $id;
+    public string $login;
+    public string $lave;
+    public string $email;
 }

@@ -3,8 +3,6 @@
 use app\core\Router;
 use app\core\Route;
 use app\core\HttpMethod;
-use app\controllers\AdminController;
-use app\controllers\TeacherController;
 use app\controllers\PagesController;
 
 $router = new Router();

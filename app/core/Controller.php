@@ -1,8 +1,10 @@
 <?php
 
+namespace app\core;
+
 use app\core\TemplateEngine;
 
-class Controller {
+abstract class Controller {
     private TemplateEngine $templateEngine;
 
     public function __construct()
