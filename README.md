@@ -35,9 +35,10 @@ para colegios públicos basado en los requerimientos dados por el profesor.
    - Para usar https: `git clone https://github.com/NosonX/sistema-colegios.git`
    - Para usar ssh: `git clone git@github.com:NosonX/sistema-colegios.git`
 3. Correr: `cd sistema-colegios`
-4. Instalar dependencias: `composer install`
-5. Iniciar el servidor local
-6. Navegar a http://localhost:8080/sistema-colegios (cambiar 8080 si es necesario por el puerto configurado en su servidor local)
+4. Instalar dependencias de PHP: `composer install`
+5. Instalar dependencias de JavaScript: `npm install`
+6. Iniciar el servidor local
+7. Navegar a http://localhost:8080/sistema-colegios (cambiar 8080 si es necesario por el puerto configurado en su servidor local)
 
 ## Estructura de carpetas
     .
