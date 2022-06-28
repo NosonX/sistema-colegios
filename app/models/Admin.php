@@ -4,7 +4,7 @@ namespace app\models;
 
 use app\core\Entity;
 
-class AdminModel extends Entity{
+class Admin extends Entity{
     protected string $table = 'administrador';
 
     public int $id;

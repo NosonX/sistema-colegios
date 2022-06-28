@@ -43,6 +43,15 @@ abstract class Entity {
         return $entity;
     }
 
+    public static function resultsToEntities($results): array
+    {
+        $entities = [];
+        foreach ($results as $result) {
+            $entities[] = self::resultToEntity($result);
+        }
+        return $entities;
+    }
+
     public static function where($query): array
     {
         $db = self::getConnection();
@@ -51,10 +60,16 @@ abstract class Entity {
         $statement = $db->prepare($sql);
         $statement->execute();
         $results = $statement->fetchAll();
-        $entities = [];
-        foreach ($results as $result) {
-            $entities[] = self::resultToEntity($result);
+        return self::resultsToEntities($results);
+    }
+
+    public static function find($id) {
+        $results = self::where('id='.$id);
+
+        if (count($results) === 1) {
+            return $results[0];
         }
-        return $entities;
+
+        return null;
     }
 }

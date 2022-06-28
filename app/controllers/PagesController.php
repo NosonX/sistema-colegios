@@ -3,12 +3,12 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\models\AdminModel;
+use app\models\Admin;
 
 class PagesController extends Controller{
 
     public function home() {
-        AdminModel::where('id IN (1,2)');
+        $admin = Admin::find(1);
 
         $this->render(
             'Home.tpl',
