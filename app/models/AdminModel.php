@@ -9,6 +9,6 @@ class AdminModel extends Entity{
 
     public int $id;
     public string $login;
-    public string $lave;
+    public string $clave;
     public string $email;
 }

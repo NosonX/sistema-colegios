@@ -3,12 +3,13 @@
 namespace app\core;
 
 use PDO;
-use ReflectionClass;
+use ReflectionProperty;
 
 abstract class Entity {
     protected string $table;
 
-    public static function getConnection(): PDO {
+    public static function getConnection(): PDO
+    {
         return new PDO(
             'mysql:host=localhost;dbname=colegiosdb;port=3307',
             'root',
@@ -19,19 +20,41 @@ abstract class Entity {
         );
     }
 
-    public static function getTableName() {
+    public static function getTableName()
+    {
         $class = get_called_class();
-        $class = new $class();
-        return $class->table;
+        $entity = new $class();
+        return $entity->table;
     }
 
-    public static function where($query) {
+    public static function resultToEntity($result)
+    {
+        $class = get_called_class();
+        $entity = new $class();
+
+        foreach ($result as $key => $value) {
+            if (!is_int($key)) {
+                $propertyType = (new ReflectionProperty($class, $key))->getType()->getName();
+                $defaultValue = $propertyType === 'int' ? -1 : '';
+                $entity->$key = $value ?? $defaultValue;
+            }
+        }
+
+        return $entity;
+    }
+
+    public static function where($query): array
+    {
         $db = self::getConnection();
         $table = self::getTableName();
         $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $query;
         $statement = $db->prepare($sql);
         $statement->execute();
-        $result = $statement->fetchAll();
-        print_r($result);
+        $results = $statement->fetchAll();
+        $entities = [];
+        foreach ($results as $result) {
+            $entities[] = self::resultToEntity($result);
+        }
+        return $entities;
     }
 }

@@ -8,7 +8,7 @@ use app\models\AdminModel;
 class PagesController extends Controller{
 
     public function home() {
-        AdminModel::where('id IN (1)');
+        AdminModel::where('id IN (1,2)');
 
         $this->render(
             'Home.tpl',
