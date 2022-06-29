@@ -5,30 +5,21 @@ namespace app\core;
 use PDO;
 use ReflectionClass;
 use ReflectionProperty;
+use app\core\Database;
+
 
 abstract class Entity {
     protected string $table;
 
-    public static function getConnection(): PDO
-    {
-        return new PDO(
-            'mysql:host=localhost;dbname=colegiosdb;port=3307',
-            'root',
-            'root',
-            [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-            ]
-        );
-    }
-
-    public static function getTableName()
+    public static function getTableName(): string
     {
         $class = get_called_class();
         $entity = new $class();
         return $entity->table;
     }
 
-    public static function getColumns() {
+    public static function getColumns(): array
+    {
         $class = get_called_class();
         $reflected = new ReflectionClass(new $class());
         $properties = $reflected->getProperties(\ReflectionProperty::IS_PUBLIC);
@@ -39,7 +30,7 @@ abstract class Entity {
         return $columns;
     }
 
-    public static function resultToEntity($result)
+    public static function resultToEntity($result): Entity
     {
         $class = get_called_class();
         $entity = new $class();
@@ -66,27 +57,24 @@ abstract class Entity {
 
     public static function where($query): array
     {
-        $db = self::getConnection();
         $table = self::getTableName();
-        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $query;
-        $statement = $db->prepare($sql);
-        $statement->execute();
-        $results = $statement->fetchAll();
+        $results = Database::where($table, $query);
         return self::resultsToEntities($results);
     }
 
     public static function find($id) {
-        $results = self::where('id='.$id);
+        $query = 'id='.$id;
+        $results = self::where($query);
 
-        if (count($results) === 1) {
+        if (count($results) > 0) {
             return $results[0];
         }
 
         return null;
     }
 
-
-    public function getProperties() {
+    public function getProperties(): array
+    {
         $properties = call_user_func('get_object_vars', $this);
         $columns = self::getColumns();
         $params = [];
@@ -97,25 +85,11 @@ abstract class Entity {
     }
 
     public function save() {
-        $db = self::getConnection();
         $table = self::getTableName();
         $properties = $this->getProperties();
         if (isset($this->id)) {
-            $set = [];
-            foreach ($properties as $key => $value) {
-                $set[] = $key.'=:'.$key;
-            }
-            $set = implode(', ', $set);
-            $sql = 'UPDATE '.$table.' SET '.$set.' WHERE id='.$this->id;
+            return Database::update($table, $this->id, $properties);
         }
-        else {
-            $columns = implode(', ', array_keys($properties));
-            $paramNames = ':'.implode(', :', array_keys($properties));
-            $sql = 'INSERT INTO '.$table.' ('.$columns.') VALUES ('.$paramNames.')';
-        }
-
-        $statement = $db->prepare($sql);
-        $result = $statement->execute($properties);
-        var_dump($result);
+        return Database::create($table, $properties);
     }
 }
