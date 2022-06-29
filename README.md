@@ -41,11 +41,33 @@ para colegios públicos basado en los requerimientos dados por el profesor.
 7. Navegar a http://localhost:8080/sistema-colegios (cambiar 8080 si es necesario por el puerto configurado en su servidor local)
 
 ## Estructura de carpetas
+#### Root
     .
-    ├── ...
-    ├── .gitignore
-    ├── LICENSE
-    └── README.md
+    ├── app                 // Logica de la aplicación
+    ├── public              // Archivos estáticos
+    ├── src                 // Código fuente no compilado de JavaScript y Sass
+    ├── .gitignore          // Archivos ignorados por git
+    ├── .htaccess           // Archivo de configuración de Apache
+    ├── .nvmrc              // Archivo de nvm para espicificar la version de Node.js del proyecto
+    ├── composer.json       // Manejo de librerías de PHP
+    ├── composer.lock  
+    ├── database.sql        // Código para la creación de la base de datos para el proyecto
+    ├── LICENSE             
+    ├── package.json        // Manejo de librerías de JavaScript
+    ├── package-lock.json
+    ├── README.md
+    └── webpack.mix.js      // Configuración de webpack usando laravel-mix
+
+#### App
+    .
+    └── app
+        ├── controllers     // Donde se colocan todos lo controladores
+        ├── core            // Donde se encuentra el nucleo del framework creado
+        ├── models          // Donde se colocan los modelos
+        ├── views           // Donde se colocan las vistas
+        ├── .htaccess       // Archivo de configuración de Apache
+        ├── autoload.php    // Donde se cargan las librerías y dependencias del sistema
+        └── routes.php      // Donde se colocan todas las rutas
 
 ---
 
@@ -67,10 +89,10 @@ para colegios públicos basado en los requerimientos dados por el profesor.
         Where: <code>$admin = Admin::where("email='creado@conorm.com'");</code>
     </p>
     <p>
-        Find by ID: <code>$admin = Admin::find(1);</code>
+        Buscar por ID: <code>$admin = Admin::find(1);</code>
     </p>
     <p>
-        Create:
+        Crear:
         <br>
         <code>$admin = new Admin();</code>
         <br>
@@ -81,7 +103,7 @@ para colegios públicos basado en los requerimientos dados por el profesor.
         <code>$id = $admin->save(); // returns id of created object</code>
     </p>
     <p>
-        Update:
+        Actualizar:
         <br>
         <code>$admin = Admin::find(5);</code>
         <br>
