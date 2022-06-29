@@ -54,4 +54,11 @@ class Database {
         $db = null; // PDO close connection
         return $statement->execute($properties);
     }
+
+    public static function delete($table, $id) {
+        $db = self::getConnection();
+        $sql = 'DELETE FROM '.$table.' WHERE id='.$id;
+        $statement = $db->prepare($sql);
+        return $statement->execute();
+    }
 }

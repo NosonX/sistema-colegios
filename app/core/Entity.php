@@ -2,24 +2,19 @@
 
 namespace app\core;
 
-use PDO;
 use ReflectionClass;
 use ReflectionProperty;
-use app\core\Database;
-
 
 abstract class Entity {
     protected string $table;
 
-    public static function getTableName(): string
-    {
+    public static function getTableName(): string {
         $class = get_called_class();
         $entity = new $class();
         return $entity->table;
     }
 
-    public static function getColumns(): array
-    {
+    public static function getColumns(): array {
         $class = get_called_class();
         $reflected = new ReflectionClass(new $class());
         $properties = $reflected->getProperties(\ReflectionProperty::IS_PUBLIC);
@@ -30,8 +25,7 @@ abstract class Entity {
         return $columns;
     }
 
-    public static function resultToEntity($result): Entity
-    {
+    public static function resultToEntity($result): Entity {
         $class = get_called_class();
         $entity = new $class();
 
@@ -46,8 +40,7 @@ abstract class Entity {
         return $entity;
     }
 
-    public static function resultsToEntities($results): array
-    {
+    public static function resultsToEntities($results): array {
         $entities = [];
         foreach ($results as $result) {
             $entities[] = self::resultToEntity($result);
@@ -55,8 +48,7 @@ abstract class Entity {
         return $entities;
     }
 
-    public static function where($query): array
-    {
+    public static function where($query): array {
         $table = self::getTableName();
         $results = Database::where($table, $query);
         return self::resultsToEntities($results);
@@ -73,8 +65,16 @@ abstract class Entity {
         return null;
     }
 
-    public function getProperties(): array
-    {
+    public static function delete($id) {
+        $record = self::find($id);
+        if ($record !== null) {
+            $table = self::getTableName();
+            Database::delete($table, $id);
+        }
+        return $record;
+    }
+
+    public function getProperties(): array {
         $properties = call_user_func('get_object_vars', $this);
         $columns = self::getColumns();
         $params = [];

@@ -21,20 +21,19 @@ class PagesController extends Controller{
             $admin = new Admin();
             $admin->email = 'crear@nuevo.com';
             $admin->clave = 12345;
-            $result = $admin->save();
-            var_dump($result);
+            $id = $admin->save(); // returns id of created object
         */
-
-        $admin = new Admin();
-        $admin->email = 'crear@nuevo.com';
-        $admin->clave = 12345;
-        $id = $admin->save();
 
 
         /* ACTUALIZAR
             $admin = Admin::find(5);
             $admin->email = 'actualizar2@actualizar.com';
             $admin->save();
+        */
+
+        /* ELIMINAR
+            $deletedAdmin = Admin::delete(10);
+            var_dump($deletedAdmin);
         */
 
 

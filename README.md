@@ -46,3 +46,50 @@ para colegios públicos basado en los requerimientos dados por el profesor.
     ├── .gitignore
     ├── LICENSE
     └── README.md
+
+---
+
+## Guía de uso
+<details>
+    <summary>Crear nueva ruta</summary>
+    <br>
+    Para agregar una ruta se debe ir al archivo <code>app/routes.php</code>. La variable <code>$router</code> contiene una instancia del objeto <code>Router</code> el mismo forma parte del core del framework creado para este proyecto.
+    <code>Router</code> tiene un metodo llamado <code>addRoute</code> que recibe los siguientes parametros: metodo http, ruta, controlador y metodo del controlador.
+    <br>
+    Ejemplo:
+    <br>
+    <code>$router->addRoute(new Route(HttpMethod::$GET, '/my-route', MyController::class, 'myMethod'));</code>
+</details>
+
+<details>
+    <summary>Ejemplos de uso del "ORM"</summary>
+    <p>
+        Where: <code>$admin = Admin::where("email='creado@conorm.com'");</code>
+    </p>
+    <p>
+        Find by ID: <code>$admin = Admin::find(1);</code>
+    </p>
+    <p>
+        Create:
+        <br>
+        <code>$admin = new Admin();</code>
+        <br>
+        <code>$admin->email = 'crear@nuevo.com';</code>
+        <br>
+        <code>$admin->clave = 12345;</code>
+        <br>
+        <code>$id = $admin->save(); // returns id of created object</code>
+    </p>
+    <p>
+        Update:
+        <br>
+        <code>$admin = Admin::find(5);</code>
+        <br>
+        <code>$admin->email = 'actualizar2@actualizar.com';</code>
+        <br>
+        <code>$admin->save();</code>
+    </p>
+    <p>
+        Delete: <code>$deletedAdmin = Admin::delete(10);</code>
+    </p>
+</details>
