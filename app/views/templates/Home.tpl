@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="./public/assets/css/main.css">
 </head>
 <body>
-    <h1>Homepage - {$nombre} {$apellido}</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi architecto cum cumque cupiditate delectus, dolorum facere harum incidunt iusto laudantium maiores modi molestias nobis ratione sint sit ullam vel.
-    </p>
-    <button type="button" class="btn btn-secondary"
-            data-bs-toggle="tooltip" data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip"
-            title="This top tooltip is themed via CSS variables.">
-        Custom tooltip
-    </button>
+    <h1>Homepage</h1>
+    <form action="./" method="post">
+        <input type="text" name="email" />
+        <input type="text" name="clave" />
+        <input type="submit">
+    </form>
+
+    <h2>Lista de emails</h2>
+    {foreach item=admin from=$admins}
+        <p>{$admin->email}</p>
+    {/foreach}
     <script src="./public/assets/js/main.js"></script>
 </body>
 </html>

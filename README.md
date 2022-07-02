@@ -41,8 +41,77 @@ para colegios públicos basado en los requerimientos dados por el profesor.
 7. Navegar a http://localhost:8080/sistema-colegios (cambiar 8080 si es necesario por el puerto configurado en su servidor local)
 
 ## Estructura de carpetas
+#### Root
     .
-    ├── ...
-    ├── .gitignore
-    ├── LICENSE
-    └── README.md
+    ├── app                 // Logica de la aplicación
+    ├── public              // Archivos estáticos
+    ├── src                 // Código fuente no compilado de JavaScript y Sass
+    ├── .gitignore          // Archivos ignorados por git
+    ├── .htaccess           // Archivo de configuración de Apache
+    ├── .nvmrc              // Archivo de nvm para espicificar la version de Node.js del proyecto
+    ├── composer.json       // Manejo de librerías de PHP
+    ├── composer.lock  
+    ├── database.sql        // Código para la creación de la base de datos para el proyecto
+    ├── LICENSE             
+    ├── package.json        // Manejo de librerías de JavaScript
+    ├── package-lock.json
+    ├── README.md
+    └── webpack.mix.js      // Configuración de webpack usando laravel-mix
+
+#### App
+    .
+    └── app
+        ├── controllers     // Donde se colocan todos lo controladores
+        ├── core            // Donde se encuentra el nucleo del framework creado
+        ├── models          // Donde se colocan los modelos
+        ├── views           // Donde se colocan las vistas
+        ├── .htaccess       // Archivo de configuración de Apache
+        ├── autoload.php    // Donde se cargan las librerías y dependencias del sistema
+        └── routes.php      // Donde se colocan todas las rutas
+
+---
+
+## Guía de uso
+<details>
+    <summary>Crear nueva ruta</summary>
+    <br>
+    Para agregar una ruta se debe ir al archivo <code>app/routes.php</code>. La variable <code>$router</code> contiene una instancia del objeto <code>Router</code> el mismo forma parte del core del framework creado para este proyecto.
+    <code>Router</code> tiene un metodo llamado <code>addRoute</code> que recibe los siguientes parametros: metodo http, ruta, controlador y metodo del controlador.
+    <br>
+    Ejemplo:
+    <br>
+    <code>$router->addRoute(new Route(HttpMethod::$GET, '/my-route', MyController::class, 'myMethod'));</code>
+</details>
+
+<details>
+    <summary>Ejemplos de uso del "ORM"</summary>
+    <p>
+        Where: <code>$admin = Admin::where("email='creado@conorm.com'");</code>
+    </p>
+    <p>
+        Buscar por ID: <code>$admin = Admin::find(1);</code>
+    </p>
+    <p>
+        Crear:
+        <br>
+        <code>$admin = new Admin();</code>
+        <br>
+        <code>$admin->email = 'crear@nuevo.com';</code>
+        <br>
+        <code>$admin->clave = 12345;</code>
+        <br>
+        <code>$id = $admin->save(); // returns id of created object</code>
+    </p>
+    <p>
+        Actualizar:
+        <br>
+        <code>$admin = Admin::find(5);</code>
+        <br>
+        <code>$admin->email = 'actualizar2@actualizar.com';</code>
+        <br>
+        <code>$admin->save();</code>
+    </p>
+    <p>
+        Delete: <code>$deletedAdmin = Admin::delete(10);</code>
+    </p>
+</details>
