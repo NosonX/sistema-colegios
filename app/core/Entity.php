@@ -65,6 +65,12 @@ abstract class Entity {
         return null;
     }
 
+    public static function findAll(): array {
+        $table = self::getTableName();
+        $results = Database::getAll($table);
+        return self::resultsToEntities($results);
+    }
+
     public static function delete($id) {
         $record = self::find($id);
         if ($record !== null) {

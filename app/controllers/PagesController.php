@@ -8,41 +8,23 @@ use app\models\Admin;
 class PagesController extends Controller{
 
     public function home() {
-
-        /* WHERE
-            $admin = Admin::where("email='creado@conorm.com'");
-        */
-
-        /* BUSCAR
-            $admin = Admin::find(1);
-        */
-
-        /* CREAR
-            $admin = new Admin();
-            $admin->email = 'crear@nuevo.com';
-            $admin->clave = 12345;
-            $id = $admin->save(); // returns id of created object
-        */
-
-
-        /* ACTUALIZAR
-            $admin = Admin::find(5);
-            $admin->email = 'actualizar2@actualizar.com';
-            $admin->save();
-        */
-
-        /* ELIMINAR
-            $deletedAdmin = Admin::delete(10);
-            var_dump($deletedAdmin);
-        */
-
+        $admins = Admin::findAll();
 
         $this->render(
             'Home.tpl',
             [
-                'nombre' => 'Eduardo',
-                'apellido' => 'Alfaro'
+                'admins' => $admins
             ]
         );
+    }
+
+    public function createAdmin() {
+        // var_dump($_SERVER['HTTP_REFERER']);
+        $admin = new Admin();
+        $admin->email = $_POST['email'];
+        $admin->clave = $_POST['clave'];
+        $admin->save();
+
+        header("Location: http://localhost:8081/sistema-colegios", FALSE, 201);
     }
 }

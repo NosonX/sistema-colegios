@@ -17,6 +17,16 @@ class Database {
         );
     }
 
+    public static function getAll($table): array {
+        $db = self::getConnection();
+        $sql = 'SELECT * FROM ' . $table;
+        $statement = $db->prepare($sql);
+        $statement->execute();
+        $results = $statement->fetchAll();
+        $db = null;
+        return $results;
+    }
+
     public static function where($table, $query): array
     {
         $db = self::getConnection();
@@ -51,14 +61,17 @@ class Database {
         $set = implode(', ', $set);
         $sql = 'UPDATE '.$table.' SET '.$set.' WHERE id='.$id;
         $statement = $db->prepare($sql);
+        $result = $statement->execute($properties);
         $db = null; // PDO close connection
-        return $statement->execute($properties);
+        return $result;
     }
 
     public static function delete($table, $id) {
         $db = self::getConnection();
         $sql = 'DELETE FROM '.$table.' WHERE id='.$id;
         $statement = $db->prepare($sql);
-        return $statement->execute();
+        $result = $statement->execute();
+        $db = null; // PDO close connection
+        return $result;
     }
 }
