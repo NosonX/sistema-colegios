@@ -5,13 +5,6 @@ namespace app\core;
 class Router {
     private array $routes;
 
-    /**
-     * @return array[]
-     */
-    public function getRoutes(): array
-    {
-        return $this->routes;
-    }
 
     public function __construct()
     {
@@ -22,6 +15,11 @@ class Router {
             HttpMethod::$PUT => [],
             HttpMethod::$DELETE => []
         ];
+    }
+
+    public function getRoutes(): array
+    {
+        return $this->routes;
     }
 
     public function addRoute(Route $route) {

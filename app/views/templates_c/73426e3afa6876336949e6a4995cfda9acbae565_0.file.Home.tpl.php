@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-02 16:05:13
+/* Smarty version 4.1.1, created on 2022-07-02 18:16:58
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c06cb9b0d069_05125845',
+  'unifunc' => 'content_62c08b9a25f122_74681450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_62c06cb9b0d069_05125845 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c08b9a25f122_74681450 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:modules/Header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

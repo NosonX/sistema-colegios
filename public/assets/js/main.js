@@ -3216,6 +3216,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var tableActionButtons = document.querySelectorAll('[data-element="table-action"]');
+var selectedId = -1;
+tableActionButtons.forEach(function (button) {
+  button.onclick = function (event) {
+    selectedId = event.currentTarget.getAttribute('data-id');
+  };
+});
 
 /***/ }),
 

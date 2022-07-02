@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-02 16:05:07
+/* Smarty version 4.1.1, created on 2022-07-02 18:22:50
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/modules/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c06cb388c8b1_15305024',
+  'unifunc' => 'content_62c08cfa9291e2_63391956',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30028fc4822c21a631a44b5460483032d6a554a8' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/modules/Header.tpl',
-      1 => 1656777854,
+      1 => 1656786167,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62c06cb388c8b1_15305024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c08cfa9291e2_63391956 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +29,8 @@ function content_62c06cb388c8b1_15305024 (Smarty_Internal_Template $_smarty_tpl)
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
-    <link rel="stylesheet" href="./public/assets/css/main.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['publicDir']->value;?>
+/assets/css/main.css">
 </head>
 <body><?php }
 }
