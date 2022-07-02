@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Homepage</h1>
-    <form action="/sistema-colegios/create" method="post">
+    <form action="/sistema-colegios/" method="post">
         <input type="text" name="email" />
         <input type="text" name="clave" />
         <input type="submit">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-02 04:40:26
+/* Smarty version 4.1.1, created on 2022-07-02 05:12:59
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62bfcc3a98c341_31909680',
+  'unifunc' => 'content_62bfd3db725e03_49074554',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73426e3afa6876336949e6a4995cfda9acbae565' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Home.tpl',
-      1 => 1656736753,
+      1 => 1656738738,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62bfcc3a98c341_31909680 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62bfd3db725e03_49074554 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -33,7 +33,7 @@ function content_62bfcc3a98c341_31909680 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <h1>Homepage</h1>
-    <form action="/sistema-colegios/create" method="post">
+    <form action="/sistema-colegios/" method="post">
         <input type="text" name="email" />
         <input type="text" name="clave" />
         <input type="submit">
