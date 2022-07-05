@@ -14,7 +14,36 @@
                 <i class="bi bi-box-arrow-right ms-2"></i>
             </a>
         </aside>
+
         <div class="col-10 overflow-hidden p-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="display-6">{block name="title"}{/block}</h1>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+                    <i class="bi bi-plus-lg"></i>
+                    {block name="createButtonText"}{/block}
+                </button>
+            </div>
+
+            <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createModalLabel">Crear nuevo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="createForm" action="{block name="createFormAction"}{/block}" method="post">
+                                {block name="createFormContent"}{/block}
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button form="createForm" type="submit" class="btn btn-primary">Crear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {block name="content"}{/block}
         </div>
     </div>

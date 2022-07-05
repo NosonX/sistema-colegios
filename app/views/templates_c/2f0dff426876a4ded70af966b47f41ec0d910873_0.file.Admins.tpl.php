@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-02 19:33:09
+/* Smarty version 4.1.1, created on 2022-07-05 00:48:08
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/Admins.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c09d75413ec9_69059254',
+  'unifunc' => 'content_62c38a48f257a2_48547602',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f0dff426876a4ded70af966b47f41ec0d910873' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/Admins.tpl',
-      1 => 1656790388,
+      1 => 1656982088,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62c09d75413ec9_69059254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c38a48f257a2_48547602 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40092530162c09d754080c3_81884239', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_59964807662c38a48f18c73_16403102', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, '../layouts/AdminPanelLayout.tpl');
 }
 /* {block "content"} */
-class Block_40092530162c09d754080c3_81884239 extends Smarty_Internal_Block
+class Block_59964807662c38a48f18c73_16403102 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_40092530162c09d754080c3_81884239',
+    0 => 'Block_59964807662c38a48f18c73_16403102',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,7 +45,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="d-flex justify-content-between align-items-center">
         <h1 class="display-6">Administradores</h1>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createAdminModal">
-            <i class="bi bi-plus"></i>
+            <i class="bi bi-plus-lg"></i>
             Nuevo administrador
         </button>
     </div>
@@ -102,14 +102,11 @@ $_smarty_tpl->tpl_vars['admin']->do_else = false;
                         <button type="submit" class="btn btn-sm btn-primary">
                             <i class="bi bi-pencil"></i>
                         </button>
-                        <form action="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-/admin/administradores/eliminar/<?php echo $_smarty_tpl->tpl_vars['admin']->value->id;?>
-" method="post">
-                            <button type="submit" class="btn btn-sm btn-danger">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </form>
-                    </td>
+                        <button type="submit" class="btn btn-sm btn-danger" data-record-id="<?php echo $_smarty_tpl->tpl_vars['admin']->value->id;?>
+">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                                            </td>
                 </tr>
             <?php
 }
