@@ -27,4 +27,9 @@ abstract class Controller {
 
         $this->templateEngine->display($file);
     }
+
+    protected function redirect($location) {
+        header("Location: ".$location, TRUE, 302);
+        die();
+    }
 }

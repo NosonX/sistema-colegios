@@ -12,14 +12,11 @@ class LevelController extends Controller {
         $level->curso = $_POST['curso'];
         $level->aula = $_POST['aula'];
         $level->save();
-
-        header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
-        die();
+        $this->redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function delete($id) {
         $result = Level::delete($id);
-        header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
-        die();
+        $this->redirect($_SERVER['HTTP_REFERER']);
     }
 }

@@ -11,14 +11,11 @@ class AdminUsersController extends Controller {
         $admin->email = $_POST['email'];
         $admin->clave = $_POST['clave'];
         $admin->save();
-
-        header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
-        die();
+        $this->redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function delete($id) {
         $result = Admin::delete($id);
-        header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
-        die();
+        $this->redirect($_SERVER['HTTP_REFERER']);
     }
 }
