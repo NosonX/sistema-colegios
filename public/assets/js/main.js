@@ -3213,16 +3213,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/js/bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/bootstrap */ "./src/js/modules/bootstrap.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tableActions */ "./src/js/modules/tableActions.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_tableActions__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-var tableActionButtons = document.querySelectorAll('[data-element="table-action"]');
-var selectedId = -1;
-tableActionButtons.forEach(function (button) {
-  button.onclick = function (event) {
-    selectedId = event.currentTarget.getAttribute('data-id');
-  };
-});
+
 
 /***/ }),
 
@@ -3253,6 +3249,36 @@ var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 var tooltipList = _toConsumableArray(tooltipTriggerList).map(function (tooltipTriggerEl) {
   return new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Tooltip(tooltipTriggerEl);
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/tableActions.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/tableActions.js ***!
+  \****************************************/
+/***/ (() => {
+
+var tableEditButtons = document.querySelectorAll('[data-table-action="edit"]');
+var tableDeleteButtons = document.querySelectorAll('[data-table-action="delete"]');
+
+var tableActionClick = function tableActionClick(event) {
+  var id = event.currentTarget.getAttribute('data-record-id');
+  var deleteUrl = "".concat(window.location.href, "/eliminar/").concat(id);
+  console.log('deleteUrl', deleteUrl);
+  var form = document.getElementById('deleteForm');
+  form.setAttribute('action', deleteUrl);
+  console.log('form', form);
+};
+
+tableDeleteButtons.forEach(function (button) {
+  return button.onclick = tableActionClick;
+}); // let selectedId = -1;
+//
+// tableActionButtons.forEach(button => {
+//     button.onclick = (event) => {
+//         selectedId = event.currentTarget.getAttribute('data-id');
+//     }
+// })
 
 /***/ }),
 

@@ -3,21 +3,22 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\models\Admin;
+use app\models\Level;
 
-class AdminUsersController extends Controller {
+class LevelController extends Controller {
     public function create() {
-        $admin = new Admin();
-        $admin->email = $_POST['email'];
-        $admin->clave = $_POST['clave'];
-        $admin->save();
+        $level = new Level();
+        $level->nivel = $_POST['nivel'];
+        $level->curso = $_POST['curso'];
+        $level->aula = $_POST['aula'];
+        $level->save();
 
         header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
         die();
     }
 
     public function delete($id) {
-        $result = Admin::delete($id);
+        $result = Level::delete($id);
         header("Location: ".$_SERVER['HTTP_REFERER'], TRUE, 302);
         die();
     }

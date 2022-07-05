@@ -65,8 +65,11 @@ class Router {
                 $isEqual = true;
 
                 foreach ($requestUri as $index => $value) {
-                    if ($value !== $routeUri[$index]) {
-                        $isEqual = strpos($routeUri[$index], '$') !== false;
+                    if ($isEqual) {
+                        $isEqual = $value === $routeUri[$index];
+                        if (!$isEqual) {
+                            $isEqual = strpos($routeUri[$index], '$') !== false;
+                        }
                     }
                 }
 

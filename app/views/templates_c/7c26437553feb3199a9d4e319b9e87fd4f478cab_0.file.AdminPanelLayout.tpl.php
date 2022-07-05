@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-05 01:16:41
+/* Smarty version 4.1.1, created on 2022-07-05 02:30:46
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/layouts/AdminPanelLayout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c390f9224d71_74949025',
+  'unifunc' => 'content_62c3a2569d5679_80713366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c26437553feb3199a9d4e319b9e87fd4f478cab' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/layouts/AdminPanelLayout.tpl',
-      1 => 1656983800,
+      1 => 1656988242,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../modules/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_62c390f9224d71_74949025 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c3a2569d5679_80713366 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 $_smarty_tpl->_subTemplateRender('file:../modules/Header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -48,13 +48,13 @@ $_smarty_tpl->_subTemplateRender('file:../modules/Header.tpl', $_smarty_tpl->cac
         <div class="col-10 overflow-hidden p-5">
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="display-6"><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_166242717962c390f92210c5_32157631', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_154050445462c3a2569cddd4_28008026', "title");
 ?>
 </h1>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                     <i class="bi bi-plus-lg"></i>
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7140507962c390f9221d40_46651972', "createButtonText");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53777024662c3a2569cf4d7_90388445', "createButtonText");
 ?>
 
                 </button>
@@ -69,25 +69,42 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7140507962c390f922
                         </div>
                         <div class="modal-body">
                             <form id="createForm" action="<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_72552044162c390f9222889_33300310', "createFormAction");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_121217816062c3a2569d0bf8_81858940', "createFormAction");
 ?>
 " method="post">
                                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_188048579962c390f92233a7_69834462', "createFormContent");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_168837470962c3a2569d2208_62889031', "createFormContent");
 ?>
 
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                             <button form="createForm" type="submit" class="btn btn-primary">Crear</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="modal fade" id="deleteModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">Eliminar</div>
+                        <div class="modal-body">
+                            ¿Seguro que desea eliminar el registro?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <form id="deleteForm" action="" method="post">
+                                <button type="submit" class="btn btn-danger">Confirmar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_122828530362c390f9223e94_67268516', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_155685095562c3a2569d3745_03350663', "content");
 ?>
 
         </div>
@@ -98,12 +115,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_122828530362c390f9
 <?php $_smarty_tpl->_subTemplateRender('file:../modules/Footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 /* {block "title"} */
-class Block_166242717962c390f92210c5_32157631 extends Smarty_Internal_Block
+class Block_154050445462c3a2569cddd4_28008026 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_166242717962c390f92210c5_32157631',
+    0 => 'Block_154050445462c3a2569cddd4_28008026',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,12 +128,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "title"} */
 /* {block "createButtonText"} */
-class Block_7140507962c390f9221d40_46651972 extends Smarty_Internal_Block
+class Block_53777024662c3a2569cf4d7_90388445 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createButtonText' => 
   array (
-    0 => 'Block_7140507962c390f9221d40_46651972',
+    0 => 'Block_53777024662c3a2569cf4d7_90388445',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -124,12 +141,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "createButtonText"} */
 /* {block "createFormAction"} */
-class Block_72552044162c390f9222889_33300310 extends Smarty_Internal_Block
+class Block_121217816062c3a2569d0bf8_81858940 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createFormAction' => 
   array (
-    0 => 'Block_72552044162c390f9222889_33300310',
+    0 => 'Block_121217816062c3a2569d0bf8_81858940',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -137,12 +154,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "createFormAction"} */
 /* {block "createFormContent"} */
-class Block_188048579962c390f92233a7_69834462 extends Smarty_Internal_Block
+class Block_168837470962c3a2569d2208_62889031 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createFormContent' => 
   array (
-    0 => 'Block_188048579962c390f92233a7_69834462',
+    0 => 'Block_168837470962c3a2569d2208_62889031',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -150,12 +167,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "createFormContent"} */
 /* {block "content"} */
-class Block_122828530362c390f9223e94_67268516 extends Smarty_Internal_Block
+class Block_155685095562c3a2569d3745_03350663 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_122828530362c390f9223e94_67268516',
+    0 => 'Block_155685095562c3a2569d3745_03350663',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

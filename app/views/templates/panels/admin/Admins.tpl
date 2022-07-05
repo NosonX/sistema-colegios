@@ -12,8 +12,8 @@
         <input type="text" class="form-control" name="email" />
     </div>
     <div>
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="text" class="form-control" name="password" />
+        <label for="clave" class="form-label">Contraseña</label>
+        <input type="text" class="form-control" name="clave" />
     </div>
 {/block}
 
