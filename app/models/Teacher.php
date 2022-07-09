@@ -4,13 +4,14 @@ namespace app\models;
 
 use app\core\Entity;
 
-class Student extends Entity {
-    protected string $table = "alumno";
+class Teacher extends Entity {
+    protected string $table = 'profesor';
 
     public int $id;
     public string $login;
     public string $clave;
     public string $nombre;
     public string $apellidos;
-    public int $nivel_id;
+    public string $email;
+    public int $especialista;
 }

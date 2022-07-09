@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-05 01:55:52
+/* Smarty version 4.1.1, created on 2022-07-09 04:32:14
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/components/Table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c39a28b9cb73_31267472',
+  'unifunc' => 'content_62c904ce4ce6a3_03145609',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '90bc34b3cabb185817965eeaa1b97acc17f4cd7d' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/components/Table.tpl',
-      1 => 1656986152,
+      1 => 1657341133,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62c39a28b9cb73_31267472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c904ce4ce6a3_03145609 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['items']->value) > 0) {?>
     <table class="table table-striped mt-5">
         <thead>
@@ -57,15 +57,16 @@ $_smarty_tpl->tpl_vars['value']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <td class="d-flex align-items-center gap-2 justify-content-end">
-                        <button class="btn btn-sm btn-primary" data-table-action="edit" data-record-id="<?php echo $_smarty_tpl->tpl_vars['item']->value->id;?>
-">
+                        <button class="btn btn-sm btn-primary" data-table-action="edit" data-record='<?php echo json_encode($_smarty_tpl->tpl_vars['item']->value);?>
+' data-record-id="<?php echo $_smarty_tpl->tpl_vars['item']->value->id;?>
+" data-bs-toggle="modal" data-bs-target="#editModal">
                             <i class="bi bi-pencil"></i>
                         </button>
                         <button class="btn btn-sm btn-danger" data-table-action="delete" data-record-id="<?php echo $_smarty_tpl->tpl_vars['item']->value->id;?>
 " data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash"></i>
                         </button>
-                                            </td>
+                    </td>
                 </tr>
             <?php
 }

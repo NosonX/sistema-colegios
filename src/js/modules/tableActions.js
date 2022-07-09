@@ -1,20 +1,33 @@
 const tableEditButtons = document.querySelectorAll('[data-table-action="edit"]');
 const tableDeleteButtons = document.querySelectorAll('[data-table-action="delete"]');
 
-const tableActionClick = (event) => {
-    const id = event.currentTarget.getAttribute('data-record-id')
-    const deleteUrl = `${window.location.href}/eliminar/${id}`;
-    console.log('deleteUrl', deleteUrl)
-    const form = document.getElementById('deleteForm');
-    form.setAttribute('action', deleteUrl);
-    console.log('form', form)
-}
-tableDeleteButtons.forEach(button => button.onclick = tableActionClick)
+tableDeleteButtons.forEach(button => button.addEventListener('click', (event) =>
+    tableActionClick(event, 'eliminar', 'deleteForm'))
+);
 
-// let selectedId = -1;
-//
-// tableActionButtons.forEach(button => {
-//     button.onclick = (event) => {
-//         selectedId = event.currentTarget.getAttribute('data-id');
-//     }
-// })
+tableEditButtons.forEach(button => button.addEventListener(
+        'click',
+        (event) => {
+            const formId = 'editForm';
+            tableActionClick(event, 'actualizar', formId);
+            setEditFormFields(event, formId);
+        }
+    )
+);
+
+const tableActionClick = (event, action, formId) => {
+    const id = event.currentTarget.getAttribute('data-record-id')
+    const url = `${window.location.href}/${action}/${id}`;
+    const form = document.getElementById(formId);
+    form.setAttribute('action', url);
+}
+
+const setEditFormFields = (event, formId) => {
+    const record = JSON.parse(event.currentTarget.getAttribute('data-record'));
+    const form = document.getElementById(formId);
+    const fields = form.querySelectorAll('input');
+    fields.forEach(field => {
+        const name = field.name;
+        field.value = record[name];
+    })
+}

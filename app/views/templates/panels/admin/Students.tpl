@@ -1,8 +1,8 @@
 {extends file='../../layouts/AdminPanelLayout.tpl'}
 
 
-{block name="title"}Profesores{/block}
-{block name="createButtonText"}Crear Profesor{/block}
+{block name="title"}Estudiantes{/block}
+{block name="createButtonText"}Crear estudiante{/block}
 
 {block name="createFormContent"}
     <div>
@@ -14,10 +14,6 @@
         <input type="text" class="form-control" name="apellidos" />
     </div>
     <div>
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="text" class="form-control" name="email" />
-    </div>
-    <div>
         <label for="login" class="form-label">Nombre de Usuario</label>
         <input type="text" class="form-control" name="login" />
     </div>
@@ -25,9 +21,14 @@
         <label for="clave" class="form-label">Contraseña</label>
         <input type="password" class="form-control" name="clave" />
     </div>
+
     <div>
-        <label for="especialista" class="form-label">Especialista</label>
-        <input type="number" class="form-control" name="especialista" />
+        <label for="nivel_id" class="form-label">Nivel</label>
+        <select class="form-select" name="nivel_id">
+            {foreach item=level from=$levels}
+                <option value="{$level->id}">{$level->nivel} /  {$level->curso}</option>
+            {/foreach}
+        </select>
     </div>
 {/block}
 
@@ -42,16 +43,20 @@
         <input type="text" class="form-control" name="apellidos" />
     </div>
     <div>
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="text" class="form-control" name="email" readonly />
-    </div>
-    <div>
         <label for="login" class="form-label">Nombre de Usuario</label>
         <input type="text" class="form-control" name="login" />
     </div>
     <div>
-        <label for="especialista" class="form-label">Especialista</label>
-        <input type="number" class="form-control" name="especialista" />
+        <label for="clave" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" name="clave" />
+    </div>
+    <div>
+        <label for="nivel_id" class="form-label">Nivel</label>
+        <select class="form-select" name="nivel_id">
+            {foreach item=level from=$levels}
+                <option value="{$level->id}"}">{$level->nivel} / {$level->curso}</option>
+            {/foreach}
+        </select>
     </div>
 {/block}
 
@@ -62,10 +67,9 @@
             'ID' => 'id',
             'Nombre' => 'nombre',
             'Apellidos' => 'apellidos',
-            'Email' => 'email',
             'Nombre de Usuario' => 'login',
-            'Especialista' => 'especialista'
+            'Nivel' => 'nivel_id'
         ]
-        items=$teachers
+        items=$students
     }
 {/block}

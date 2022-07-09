@@ -3260,25 +3260,35 @@ var tooltipList = _toConsumableArray(tooltipTriggerList).map(function (tooltipTr
 
 var tableEditButtons = document.querySelectorAll('[data-table-action="edit"]');
 var tableDeleteButtons = document.querySelectorAll('[data-table-action="delete"]');
+tableDeleteButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    return tableActionClick(event, 'eliminar', 'deleteForm');
+  });
+});
+tableEditButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    var formId = 'editForm';
+    tableActionClick(event, 'actualizar', formId);
+    setEditFormFields(event, formId);
+  });
+});
 
-var tableActionClick = function tableActionClick(event) {
+var tableActionClick = function tableActionClick(event, action, formId) {
   var id = event.currentTarget.getAttribute('data-record-id');
-  var deleteUrl = "".concat(window.location.href, "/eliminar/").concat(id);
-  console.log('deleteUrl', deleteUrl);
-  var form = document.getElementById('deleteForm');
-  form.setAttribute('action', deleteUrl);
-  console.log('form', form);
+  var url = "".concat(window.location.href, "/").concat(action, "/").concat(id);
+  var form = document.getElementById(formId);
+  form.setAttribute('action', url);
 };
 
-tableDeleteButtons.forEach(function (button) {
-  return button.onclick = tableActionClick;
-}); // let selectedId = -1;
-//
-// tableActionButtons.forEach(button => {
-//     button.onclick = (event) => {
-//         selectedId = event.currentTarget.getAttribute('data-id');
-//     }
-// })
+var setEditFormFields = function setEditFormFields(event, formId) {
+  var record = JSON.parse(event.currentTarget.getAttribute('data-record'));
+  var form = document.getElementById(formId);
+  var fields = form.querySelectorAll('input');
+  fields.forEach(function (field) {
+    var name = field.name;
+    field.value = record[name];
+  });
+};
 
 /***/ }),
 

@@ -13,17 +13,12 @@
                         <td>{$item->$value}</td>
                     {/foreach}
                     <td class="d-flex align-items-center gap-2 justify-content-end">
-                        <button class="btn btn-sm btn-primary" data-table-action="edit" data-record-id="{$item->id}">
+                        <button class="btn btn-sm btn-primary" data-table-action="edit" data-record='{json_encode($item)}' data-record-id="{$item->id}" data-bs-toggle="modal" data-bs-target="#editModal">
                             <i class="bi bi-pencil"></i>
                         </button>
                         <button class="btn btn-sm btn-danger" data-table-action="delete" data-record-id="{$item->id}" data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash"></i>
                         </button>
-                        {*<form action="{$url}/admin/administradores/eliminar/{$admin->id}" method="post">
-                            <button type="submit" class="btn btn-sm btn-danger">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </form>*}
                     </td>
                 </tr>
             {/foreach}
