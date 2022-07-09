@@ -68,7 +68,8 @@
             'Nombre' => 'nombre',
             'Apellidos' => 'apellidos',
             'Nombre de Usuario' => 'login',
-            'Nivel' => 'nivel_id'
+            'Nivel' => 'level.nivel',
+            'Curso' => 'level.curso'
         ]
         items=$students
     }

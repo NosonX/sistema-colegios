@@ -4,9 +4,17 @@ namespace app\core;
 
 use ReflectionClass;
 use ReflectionProperty;
+use app\core\Collection;
 
 abstract class Entity {
     protected string $table;
+
+    protected function with($entity, $localKey) {
+        $newProperty = strtolower($entity);
+        $newProperty = explode('\\', $newProperty);
+        $newProperty = $newProperty[count($newProperty) - 1];
+        $this->{$newProperty} = $entity::find($this->$localKey);
+    }
 
     public static function getTableName(): string {
         $class = get_called_class();
@@ -40,15 +48,15 @@ abstract class Entity {
         return $entity;
     }
 
-    public static function resultsToEntities($results): array {
-        $entities = [];
+    public static function resultsToEntities($results): Collection {
+        $entities = new Collection();
         foreach ($results as $result) {
             $entities[] = self::resultToEntity($result);
         }
         return $entities;
     }
 
-    public static function where($query): array {
+    public static function where($query): Collection {
         $table = self::getTableName();
         $results = Database::where($table, $query);
         return self::resultsToEntities($results);
@@ -65,10 +73,16 @@ abstract class Entity {
         return null;
     }
 
-    public static function findAll(): array {
+    public static function findAll(...$relationships): Collection {
         $table = self::getTableName();
         $results = Database::getAll($table);
-        return self::resultsToEntities($results);
+        $entities = self::resultsToEntities($results);
+        foreach ($entities as $entity) {
+            foreach ($relationships as $relationship) {
+                $entity->{$relationship}();
+            }
+        }
+        return $entities;
     }
 
     public static function delete($id) {
@@ -97,5 +111,9 @@ abstract class Entity {
             return Database::update($table, $this->id, $properties);
         }
         return Database::create($table, $properties);
+    }
+
+    public function toArray() {
+        return json_decode(json_encode($this), true);
     }
 }

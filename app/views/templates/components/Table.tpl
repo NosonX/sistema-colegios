@@ -10,7 +10,12 @@
             {foreach item=item from=$items}
                 <tr>
                     {foreach item=value from=$headers}
-                        <td>{$item->$value}</td>
+                        {assign var='properties' value="."|explode:$value}
+                        {assign var='displayValue' value=$item}
+                        {foreach item=$property from=$properties}
+                            {$displayValue = $displayValue[$property]}
+                        {/foreach}
+                        <td>{$displayValue}</td>
                     {/foreach}
                     <td class="d-flex align-items-center gap-2 justify-content-end">
                         <button class="btn btn-sm btn-primary" data-table-action="edit" data-record='{json_encode($item)}' data-record-id="{$item->id}" data-bs-toggle="modal" data-bs-target="#editModal">

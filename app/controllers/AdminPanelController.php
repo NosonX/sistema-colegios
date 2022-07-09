@@ -15,24 +15,24 @@ class AdminPanelController extends Controller {
 
     public function admins() {
         $admins = Admin::findAll();
-        $this->render('panels/admin/Admins.tpl', ['admins' => $admins]);
+        $this->render('panels/admin/Admins.tpl', ['admins' => $admins->toArray()]);
     }
 
     public function levels() {
         $levels = Level::findAll();
-        $this->render('panels/admin/Levels.tpl', ['levels' => $levels]);
+        $this->render('panels/admin/Levels.tpl', ['levels' => $levels->toArray()]);
     }
 
     public function teachers() {
         $teachers = Teacher::findAll();
-        $this->render('panels/admin/Teachers.tpl', ['teachers' => $teachers]);
+        $this->render('panels/admin/Teachers.tpl', ['teachers' => $teachers->toArray()]);
     }
 
     public function students() {
-        $students = Student::findAll();
+        $students = Student::findAll('withLevel');
         $levels = Level::findAll();
         $this->render('panels/admin/Students.tpl', [
-            'students' => $students,
+            'students' => $students->toArray(),
             'levels' => $levels
         ]);
     }
