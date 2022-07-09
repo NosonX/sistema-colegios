@@ -3284,9 +3284,19 @@ var setEditFormFields = function setEditFormFields(event, formId) {
   var record = JSON.parse(event.currentTarget.getAttribute('data-record'));
   var form = document.getElementById(formId);
   var fields = form.querySelectorAll('input');
+  var selects = form.querySelectorAll('select');
   fields.forEach(function (field) {
     var name = field.name;
     field.value = record[name];
+  });
+  selects.forEach(function (select) {
+    var name = select.name;
+    var options = select.querySelectorAll('option');
+    options.forEach(function (option) {
+      if (option.value == record[name]) {
+        option.selected = true;
+      }
+    });
   });
 };
 

@@ -26,8 +26,20 @@ const setEditFormFields = (event, formId) => {
     const record = JSON.parse(event.currentTarget.getAttribute('data-record'));
     const form = document.getElementById(formId);
     const fields = form.querySelectorAll('input');
+    const selects = form.querySelectorAll('select');
+
     fields.forEach(field => {
         const name = field.name;
         field.value = record[name];
+    })
+
+    selects.forEach(select => {
+        const name = select.name;
+        const options = select.querySelectorAll('option');
+        options.forEach(option => {
+            if (option.value == record[name]) {
+                option.selected = true;
+            }
+        })
     })
 }
