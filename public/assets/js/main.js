@@ -3213,6 +3213,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/js/bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/bootstrap */ "./src/js/modules/bootstrap.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tableActions */ "./src/js/modules/tableActions.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_tableActions__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -3246,6 +3249,46 @@ var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 var tooltipList = _toConsumableArray(tooltipTriggerList).map(function (tooltipTriggerEl) {
   return new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Tooltip(tooltipTriggerEl);
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/tableActions.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/tableActions.js ***!
+  \****************************************/
+/***/ (() => {
+
+var tableEditButtons = document.querySelectorAll('[data-table-action="edit"]');
+var tableDeleteButtons = document.querySelectorAll('[data-table-action="delete"]');
+tableDeleteButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    return tableActionClick(event, 'eliminar', 'deleteForm');
+  });
+});
+tableEditButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    var formId = 'editForm';
+    tableActionClick(event, 'actualizar', formId);
+    setEditFormFields(event, formId);
+  });
+});
+
+var tableActionClick = function tableActionClick(event, action, formId) {
+  var id = event.currentTarget.getAttribute('data-record-id');
+  var url = "".concat(window.location.href, "/").concat(action, "/").concat(id);
+  var form = document.getElementById(formId);
+  form.setAttribute('action', url);
+};
+
+var setEditFormFields = function setEditFormFields(event, formId) {
+  var record = JSON.parse(event.currentTarget.getAttribute('data-record'));
+  var form = document.getElementById(formId);
+  var fields = form.querySelectorAll('input');
+  fields.forEach(function (field) {
+    var name = field.name;
+    field.value = record[name];
+  });
+};
 
 /***/ }),
 
