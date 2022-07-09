@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-09 05:23:57
+/* Smarty version 4.1.1, created on 2022-07-09 05:32:15
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Students.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62c910ed3f1b95_43635806',
+  'unifunc' => 'content_62c912df23ce38_41677939',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ccaf1aaebf76d357c2177ffdb16db6326a0ebbc' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Students.tpl',
-      1 => 1657344236,
+      1 => 1657344734,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../components/Table.tpl' => 1,
   ),
 ),false)) {
-function content_62c910ed3f1b95_43635806 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c912df23ce38_41677939 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -29,37 +29,37 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65428680862c910ed3d7c60_48578725', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_173707845962c912df221715_87442763', "title");
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125573706462c910ed3d90e4_49416584', "createButtonText");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_155874166362c912df223080_93725428', "createButtonText");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31377236362c910ed3da6d0_48862180', "createFormContent");
-?>
-
-
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58327106962c910ed3e74e0_80626444', "editFormContent");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37128038262c912df2242c4_90494287', "createFormContent");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_130695272162c910ed3eb732_36684144', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125766599062c912df231812_73882973', "editFormContent");
+?>
+
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_143092372362c912df236193_17809924', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/AdminPanelLayout.tpl');
 }
 /* {block "title"} */
-class Block_65428680862c910ed3d7c60_48578725 extends Smarty_Internal_Block
+class Block_173707845962c912df221715_87442763 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_65428680862c910ed3d7c60_48578725',
+    0 => 'Block_173707845962c912df221715_87442763',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -69,12 +69,12 @@ Estudiantes<?php
 }
 /* {/block "title"} */
 /* {block "createButtonText"} */
-class Block_125573706462c910ed3d90e4_49416584 extends Smarty_Internal_Block
+class Block_155874166362c912df223080_93725428 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createButtonText' => 
   array (
-    0 => 'Block_125573706462c910ed3d90e4_49416584',
+    0 => 'Block_155874166362c912df223080_93725428',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -84,12 +84,12 @@ Crear estudiante<?php
 }
 /* {/block "createButtonText"} */
 /* {block "createFormContent"} */
-class Block_31377236362c910ed3da6d0_48862180 extends Smarty_Internal_Block
+class Block_37128038262c912df2242c4_90494287 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createFormContent' => 
   array (
-    0 => 'Block_31377236362c910ed3da6d0_48862180',
+    0 => 'Block_37128038262c912df2242c4_90494287',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -135,12 +135,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block "createFormContent"} */
 /* {block "editFormContent"} */
-class Block_58327106962c910ed3e74e0_80626444 extends Smarty_Internal_Block
+class Block_125766599062c912df231812_73882973 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'editFormContent' => 
   array (
-    0 => 'Block_58327106962c910ed3e74e0_80626444',
+    0 => 'Block_125766599062c912df231812_73882973',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -172,7 +172,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['level']->value) 
 $_smarty_tpl->tpl_vars['level']->do_else = false;
 ?>
                 <option value="<?php echo $_smarty_tpl->tpl_vars['level']->value->id;?>
-"}"><?php echo $_smarty_tpl->tpl_vars['level']->value->nivel;?>
+"><?php echo $_smarty_tpl->tpl_vars['level']->value->nivel;?>
  / <?php echo $_smarty_tpl->tpl_vars['level']->value->curso;?>
 </option>
             <?php
@@ -185,12 +185,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block "editFormContent"} */
 /* {block "content"} */
-class Block_130695272162c910ed3eb732_36684144 extends Smarty_Internal_Block
+class Block_143092372362c912df236193_17809924 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_130695272162c910ed3eb732_36684144',
+    0 => 'Block_143092372362c912df236193_17809924',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -54,7 +54,7 @@
         <label for="nivel_id" class="form-label">Nivel</label>
         <select class="form-select" name="nivel_id">
             {foreach item=level from=$levels}
-                <option value="{$level->id}"}">{$level->nivel} / {$level->curso}</option>
+                <option value="{$level->id}">{$level->nivel} / {$level->curso}</option>
             {/foreach}
         </select>
     </div>
