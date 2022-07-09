@@ -7,10 +7,17 @@ use PDO;
 class Database {
     public static function getConnection(): PDO
     {
+        $driver = $_ENV['DB_DRIVER'];
+        $host = $_ENV['DB_HOST'];
+        $name = $_ENV['DB_NAME'];
+        $port = $_ENV['DB_PORT'];
+        $user = $_ENV['DB_USER'];
+        $pass = $_ENV['DB_PASS'];
+
         return new PDO(
-            'mysql:host=localhost;dbname=colegiosdb;port=3307',
-            'root',
-            'root',
+            $driver.':host='.$host.';dbname='.$name.';port='.$port,
+            $user,
+            $pass,
             [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]
