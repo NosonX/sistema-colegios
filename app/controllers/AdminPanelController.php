@@ -7,6 +7,7 @@ use app\models\Admin;
 use app\models\Level;
 use app\models\Teacher;
 use app\models\Student;
+use app\models\Subject;
 
 class AdminPanelController extends Controller {
     public function dashboard() {
@@ -34,6 +35,17 @@ class AdminPanelController extends Controller {
         $this->render('panels/admin/Students.tpl', [
             'students' => $students->toArray(),
             'levels' => $levels
+        ]);
+    }
+
+    public function subjects() {
+        $subjects = Subject::findAll('withLevel', 'withTeacher');
+        $levels = Level::findAll();
+        $teachers = Teacher::findAll();
+        $this->render('panels/admin/Subjects.tpl', [
+            'subjects' => $subjects->toArray(),
+            'levels' => $levels,
+            'teachers' => $teachers
         ]);
     }
 }

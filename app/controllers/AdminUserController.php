@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Admin;
 
-class AdminUsersController extends Controller {
+class AdminUserController extends Controller {
     public function create() {
         $admin = new Admin();
         $admin->login = $_POST['login'];

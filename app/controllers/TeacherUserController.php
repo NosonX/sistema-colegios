@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Teacher;
 
-class TeacherController extends Controller {
+class TeacherUserController extends Controller {
     function create() {
         $teacher = new Teacher();
         $teacher->login = $_POST['login'];

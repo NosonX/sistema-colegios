@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Student;
 
-class StudentController extends Controller {
+class StudentUserController extends Controller {
     function create() {
         $student = new Student();
         $student->clave = $_POST['clave'];

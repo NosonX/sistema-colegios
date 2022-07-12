@@ -26,6 +26,16 @@ class Router {
         $this->routes[$route->getHttpMethod()][] = $route;
     }
 
+    public function get($uri, $controller, $method): void
+    {
+        $this->addRoute(new Route(HttpMethod::$GET, $uri, $controller, $method));
+    }
+
+    public function post($uri, $controller, $method): void
+    {
+        $this->addRoute(new Route(HttpMethod::$POST, $uri, $controller, $method));
+    }
+
     public function run() {
         $uri = $this->getUri();
         $httpMethod = $_SERVER['REQUEST_METHOD'];
