@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Admin;
 use app\models\Level;
+use app\models\Schedule;
 use app\models\Teacher;
 use app\models\Student;
 use app\models\Subject;
@@ -46,6 +47,15 @@ class AdminPanelController extends Controller {
             'subjects' => $subjects->toArray(),
             'levels' => $levels,
             'teachers' => $teachers
+        ]);
+    }
+
+    public function schedules() {
+        $schedules = Schedule::findAll('withSubject');
+        $subjects = Subject::findAll('withLevel');
+        $this->render('panels/admin/Schedules.tpl', [
+            'schedules' => $schedules->toArray(),
+            'subjects' => $subjects->toArray()
         ]);
     }
 }

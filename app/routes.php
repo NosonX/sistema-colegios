@@ -9,6 +9,7 @@ use app\controllers\LevelController;
 use app\controllers\TeacherUserController;
 use app\controllers\StudentUserController;
 use app\controllers\SubjectController;
+use app\controllers\ScheduleController;
 
 $router = new Router();
 
@@ -41,5 +42,10 @@ $router->get('/admin/asignaturas', AdminPanelController::class, 'subjects');
 $router->post('/admin/asignaturas', SubjectController::class, 'create');
 $router->post('/admin/asignaturas/eliminar/$id', SubjectController::class, 'delete');
 $router->post('/admin/asignaturas/actualizar/$id', SubjectController::class, 'update');
+
+$router->get('/admin/horarios', AdminPanelController::class, 'schedules');
+$router->post('/admin/horarios', ScheduleController::class, 'create');
+$router->post('/admin/horarios/eliminar/$id', ScheduleController::class, 'delete');
+$router->post('/admin/horarios/actualizar/$id', ScheduleController::class, 'update');
 
 $router->run();
