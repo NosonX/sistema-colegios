@@ -42,9 +42,9 @@ class AuthController extends Controller {
             $_SESSION['user'] = $user;
             $_SESSION['role'] = $role;
 
-            if ($role === Constants::$ADMIN_ROLE) $this->redirect("admin");
-            if ($role === Constants::$TEACHER_ROLE) $this->redirect("profesor");
-            else $this->redirect("estudiante");
+            if ($role === Constants::$ADMIN_ROLE) $this->redirect("/admin");
+            if ($role === Constants::$TEACHER_ROLE) $this->redirect("/profesor");
+            else $this->redirect("/estudiante");
         } else {
             $this->redirect('');
         }

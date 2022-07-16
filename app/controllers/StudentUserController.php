@@ -14,7 +14,7 @@ class StudentUserController extends Controller {
         $student->login = $_POST['login'];
         $student->nivel_id = $_POST['nivel_id'];
         $student->save();
-        $this->redirect('admin/estudiantes');
+        $this->redirect('/admin/estudiantes');
     }
 
     function update($id) {
@@ -24,11 +24,11 @@ class StudentUserController extends Controller {
         $student->apellidos = $_POST['apellidos'];
         $student->nivel_id = $_POST['nivel_id'];
         $student->save();
-        $this->redirect('admin/estudiantes');
+        $this->redirect('/admin/estudiantes');
     }
 
     function delete($id) {
         $result = Student::delete($id);
-        $this->redirect('admin/estudiantes');
+        $this->redirect('/admin/estudiantes');
     }
 }

@@ -15,10 +15,11 @@ class TeacherUserController extends Controller {
         $teacher->email = $_POST['email'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect('admin/profesores');
+        $this->redirect('/admin/profesores');
     }
 
-    function update($id) {
+    function update($id)
+    {
         $teacher = Teacher::find($id);
         $teacher->login = $_POST['login'];
         $teacher->clave = $_POST['clave'];
@@ -26,10 +27,11 @@ class TeacherUserController extends Controller {
         $teacher->apellidos = $_POST['apellidos'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect('admin/profesores')
+        $this->redirect('/admin/profesores');
+    }
 
     function delete($id) {
         $result = Teacher::delete($id);
-        $this->redirect('admin/profesores');
+        $this->redirect('/admin/profesores');
     }
 }
