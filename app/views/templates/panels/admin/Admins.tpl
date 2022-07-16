@@ -14,6 +14,7 @@
                 maxlength="255"
                 required
                 data-pristine-required-message="Email requerido"
+                data-pristine-email-message="El formato del email no es válido"
         />
     </div>
     <div class="form-group mb-3">
@@ -53,6 +54,7 @@
                 maxlength="255"
                 required
                 data-pristine-required-message="Email requerido"
+                data-pristine-email-message="El formato del email no es válido"
         />
     </div>
     <div class="form-group mb-3">

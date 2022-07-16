@@ -1,8 +1,9 @@
 import Pristine from 'pristinejs';
 
 const createForm = document.getElementById('createForm');
+const editForm = document.getElementById('editForm');
 const submitCreateFormButton = document.getElementById('createModal').querySelector('button[type="submit"]')
-console.log(submitCreateFormButton)
+const submitEditFormButton = document.getElementById('editModal').querySelector('button[type="submit"]')
 
 const config = {
     // class of the parent element where the error/success class is added
@@ -17,11 +18,14 @@ const config = {
     errorTextClass: 'text-danger'
 };
 
-submitCreateFormButton.addEventListener('click', async (event) => {
+const submitForm = async (event, form) => {
     event.preventDefault();
-    const pristine = new Pristine(createForm, config);
+    const pristine = new Pristine(form, config);
     const isValid = pristine.validate();
     if (isValid) {
-        createForm.submit();
+        form.submit();
     }
-})
+};
+
+submitCreateFormButton.addEventListener('click', (event) => submitForm(event, createForm));
+submitEditFormButton.addEventListener('click', (event) => submitForm(event, editForm));

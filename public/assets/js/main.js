@@ -3274,8 +3274,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var createForm = document.getElementById('createForm');
+var editForm = document.getElementById('editForm');
 var submitCreateFormButton = document.getElementById('createModal').querySelector('button[type="submit"]');
-console.log(submitCreateFormButton);
+var submitEditFormButton = document.getElementById('editModal').querySelector('button[type="submit"]');
 var config = {
   // class of the parent element where the error/success class is added
   classTo: 'form-group',
@@ -3288,19 +3289,20 @@ var config = {
   // class of the error text element
   errorTextClass: 'text-danger'
 };
-submitCreateFormButton.addEventListener('click', /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
+
+var submitForm = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event, form) {
     var pristine, isValid;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             event.preventDefault();
-            pristine = new (pristinejs__WEBPACK_IMPORTED_MODULE_0___default())(createForm, config);
+            pristine = new (pristinejs__WEBPACK_IMPORTED_MODULE_0___default())(form, config);
             isValid = pristine.validate();
 
             if (isValid) {
-              createForm.submit();
+              form.submit();
             }
 
           case 4:
@@ -3311,10 +3313,17 @@ submitCreateFormButton.addEventListener('click', /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function (_x) {
+  return function submitForm(_x, _x2) {
     return _ref.apply(this, arguments);
   };
-}());
+}();
+
+submitCreateFormButton.addEventListener('click', function (event) {
+  return submitForm(event, createForm);
+});
+submitEditFormButton.addEventListener('click', function (event) {
+  return submitForm(event, editForm);
+});
 
 /***/ }),
 
