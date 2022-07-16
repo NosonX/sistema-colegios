@@ -6,6 +6,6 @@ use app\core\Controller;
 
 class PageController extends Controller{
     public function home() {
-        $this->render('Home.tpl');
+        $this->render('Login.tpl');
     }
 }
