@@ -13,7 +13,7 @@ class ScheduleController extends Controller {
         $schedule->horaFin = $_POST['horaFin'];
         $schedule->asignatura_id = $_POST['asignatura_id'];
         $schedule->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/horarios');
     }
 
     public function update($id) {
@@ -23,11 +23,11 @@ class ScheduleController extends Controller {
         $schedule->horaFin = $_POST['horaFin'];
         $schedule->asignatura_id = $_POST['asignatura_id'];
         $schedule->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/horarios');
     }
 
     public function delete($id) {
         $result = Schedule::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/horarios');
     }
 }

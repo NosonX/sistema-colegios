@@ -12,7 +12,7 @@ class SubjectController extends Controller {
         $subject->nivel_id = $_POST['nivel_id'];
         $subject->profesor_id = $_POST['profesor_id'];
         $subject->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/asignaturas');
     }
 
     public function update($id) {
@@ -21,11 +21,11 @@ class SubjectController extends Controller {
         $subject->nivel_id = $_POST['nivel_id'];
         $subject->profesor_id = $_POST['profesor_id'];
         $subject->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/asignaturas');
     }
 
     public function delete($id) {
         $result = Subject::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/asignaturas');
     }
 }

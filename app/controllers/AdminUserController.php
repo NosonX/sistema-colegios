@@ -12,7 +12,7 @@ class AdminUserController extends Controller {
         $admin->email = $_POST['email'];
         $admin->clave = $_POST['clave'];
         $admin->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/administradores');
     }
 
     public function update($id) {
@@ -20,11 +20,11 @@ class AdminUserController extends Controller {
         $admin->login = $_POST['login'];
         $admin->clave = $_POST['clave'];
         $admin->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/administradores');
     }
 
     public function delete($id) {
         $result = Admin::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/administradores');
     }
 }

@@ -42,22 +42,19 @@ class AuthController extends Controller {
             $_SESSION['user'] = $user;
             $_SESSION['role'] = $role;
 
-            if ($role === Constants::$ADMIN_ROLE) $this->redirect($_SERVER['HTTP_REFERER']."admin");
-            if ($role === Constants::$TEACHER_ROLE) $this->redirect($_SERVER['HTTP_REFERER']."profesor");
-            else $this->redirect($_SERVER['HTTP_REFERER']."estudiante");
+            if ($role === Constants::$ADMIN_ROLE) $this->redirect("admin");
+            if ($role === Constants::$TEACHER_ROLE) $this->redirect("profesor");
+            else $this->redirect("estudiante");
         } else {
-            $this->redirect($_SERVER['HTTP_REFERER']);
+            $this->redirect('');
         }
     }
 
     public function logout() {
-        $publicDir = str_replace('/index.php', '', $_SERVER['PHP_SELF']);
-        $url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].str_replace('/public', '', $publicDir);
-
         session_start();
         session_unset();
         session_destroy();
 
-        $this->redirect($url);
+        $this->redirect('');
     }
 }

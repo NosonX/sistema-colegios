@@ -15,7 +15,7 @@ class TeacherUserController extends Controller {
         $teacher->email = $_POST['email'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/profesores');
     }
 
     function update($id) {
@@ -26,11 +26,10 @@ class TeacherUserController extends Controller {
         $teacher->apellidos = $_POST['apellidos'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
-    }
+        $this->redirect('admin/profesores')
 
     function delete($id) {
         $result = Teacher::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('admin/profesores');
     }
 }
