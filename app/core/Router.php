@@ -26,14 +26,14 @@ class Router {
         $this->routes[$route->getHttpMethod()][] = $route;
     }
 
-    public function get($uri, $controller, $method): void
+    public function get($uri, $controller, $method, $middleware = null): void
     {
-        $this->addRoute(new Route(HttpMethod::$GET, $uri, $controller, $method));
+        $this->addRoute(new Route(HttpMethod::$GET, $uri, $controller, $method, $middleware));
     }
 
-    public function post($uri, $controller, $method): void
+    public function post($uri, $controller, $method, $middleware = null): void
     {
-        $this->addRoute(new Route(HttpMethod::$POST, $uri, $controller, $method));
+        $this->addRoute(new Route(HttpMethod::$POST, $uri, $controller, $method, $middleware));
     }
 
     public function run() {
@@ -53,8 +53,19 @@ class Router {
         if ($routeFound !== false) {
             $controller = $routeFound->getController();
             $method = $routeFound->getMethod();
-            $uriParams = $this->getUriParams($uri, $routeFound->getUri());
-            (new $controller)->$method(...$uriParams);
+            $middleware = $routeFound->getMiddleware();
+
+            if (isset($middleware) && $middleware !== null) {
+                $uriParams = $this->getUriParams($uri, $routeFound->getUri());
+                $callback = function () use ($controller, $method, $uriParams) {
+                    (new $controller)->$method(...$uriParams);
+                };
+                $middleware::run($callback);
+            } else {
+                (new $controller)->$method(...$uriParams);
+            }
+
+
         } else {
             echo 'ERROR 404';
         }

@@ -10,13 +10,14 @@ use app\controllers\TeacherUserController;
 use app\controllers\StudentUserController;
 use app\controllers\SubjectController;
 use app\controllers\ScheduleController;
+use app\middlewares\AuthMiddleware;
 
 $router = new Router();
 
 $router->get('/', PageController::class, 'home');
 $router->post('/login', AuthController::class, 'login');
 
-$router->get('/admin', AdminPanelController::class, 'dashboard');
+$router->get('/admin', AdminPanelController::class, 'dashboard', AuthMiddleware::class);
 
 $router->get('/admin/administradores', AdminPanelController::class, 'admins');
 $router->post('/admin/administradores', AdminUserController::class, 'create');
