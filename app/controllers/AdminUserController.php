@@ -10,7 +10,8 @@ class AdminUserController extends Controller {
         $admin = new Admin();
         $admin->login = $_POST['login'];
         $admin->email = $_POST['email'];
-        $admin->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $admin->clave = $password;
         $admin->save();
         $this->redirect('/admin/administradores');
     }
@@ -18,7 +19,8 @@ class AdminUserController extends Controller {
     public function update($id) {
         $admin = Admin::find($id);
         $admin->login = $_POST['login'];
-        $admin->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $admin->clave = $password;
         $admin->save();
         $this->redirect('/admin/administradores');
     }

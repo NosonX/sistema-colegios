@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-16 03:10:22
+/* Smarty version 4.1.1, created on 2022-07-16 16:03:54
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Schedules.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d22c1e1c2b93_16594324',
+  'unifunc' => 'content_62d2e16a4af239_47357106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3edc084c4bf1d0aad791947b3a59b3cddcd712da' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Schedules.tpl',
-      1 => 1657940825,
+      1 => 1657987433,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../components/Table.tpl' => 1,
   ),
 ),false)) {
-function content_62d22c1e1c2b93_16594324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62d2e16a4af239_47357106 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -29,35 +29,35 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_41728778262d22c1e1a6701_25548011', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_176047939962d2e16a4926f3_29969891', "title");
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65448541762d22c1e1a8511_66132360', "createButtonText");
-?>
-
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_98250109462d22c1e1a9b83_48819288', "createFormContent");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_27947608662d2e16a494d38_90436952', "createButtonText");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17407964962d22c1e1b7e94_60487674', "editFormContent");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13350969162d2e16a4963f1_93202332', "createFormContent");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125504414462d22c1e1bcc04_95549370', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135597753362d2e16a4a39c9_56268858', "editFormContent");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110509892662d2e16a4a7ca5_81906232', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/AdminPanelLayout.tpl');
 }
 /* {block "title"} */
-class Block_41728778262d22c1e1a6701_25548011 extends Smarty_Internal_Block
+class Block_176047939962d2e16a4926f3_29969891 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_41728778262d22c1e1a6701_25548011',
+    0 => 'Block_176047939962d2e16a4926f3_29969891',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,12 +67,12 @@ Horarios<?php
 }
 /* {/block "title"} */
 /* {block "createButtonText"} */
-class Block_65448541762d22c1e1a8511_66132360 extends Smarty_Internal_Block
+class Block_27947608662d2e16a494d38_90436952 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createButtonText' => 
   array (
-    0 => 'Block_65448541762d22c1e1a8511_66132360',
+    0 => 'Block_27947608662d2e16a494d38_90436952',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,12 +82,12 @@ Crear horario<?php
 }
 /* {/block "createButtonText"} */
 /* {block "createFormContent"} */
-class Block_98250109462d22c1e1a9b83_48819288 extends Smarty_Internal_Block
+class Block_13350969162d2e16a4963f1_93202332 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'createFormContent' => 
   array (
-    0 => 'Block_98250109462d22c1e1a9b83_48819288',
+    0 => 'Block_13350969162d2e16a4963f1_93202332',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -128,12 +128,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block "createFormContent"} */
 /* {block "editFormContent"} */
-class Block_17407964962d22c1e1b7e94_60487674 extends Smarty_Internal_Block
+class Block_135597753362d2e16a4a39c9_56268858 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'editFormContent' => 
   array (
-    0 => 'Block_17407964962d22c1e1b7e94_60487674',
+    0 => 'Block_135597753362d2e16a4a39c9_56268858',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -174,12 +174,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block "editFormContent"} */
 /* {block "content"} */
-class Block_125504414462d22c1e1bcc04_95549370 extends Smarty_Internal_Block
+class Block_110509892662d2e16a4a7ca5_81906232 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_125504414462d22c1e1bcc04_95549370',
+    0 => 'Block_110509892662d2e16a4a7ca5_81906232',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

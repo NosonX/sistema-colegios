@@ -33,7 +33,7 @@ class AuthController extends Controller {
                 $role = Constants::$TEACHER_ROLE;
             }
 
-            if (count($user) > 0) $validCredentials = $user[0]->clave === $pass;
+            if (count($user) > 0) $validCredentials = password_verify($pass, $user[0]->clave);
             else $role = '';
         }
 
