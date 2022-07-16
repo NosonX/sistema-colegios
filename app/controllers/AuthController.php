@@ -4,25 +4,47 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\models\Admin;
+use app\models\Student;
+use app\models\Teacher;
+use app\utils\Constants;
 
 class AuthController extends Controller {
     public function login() {
         session_start();
         $email = $_REQUEST['email'] ?? '';
         $pass = $_REQUEST['clave'] ?? '';
+        $role = Constants::$TEACHER_ROLE;
+        $user = null;
 
         $validCredentials = false;
 
         if ($email !== '') {
-            $user = Admin::where('email="'.$email.'"');
-            if (count($user) > 0) {
-                $validCredentials = $user[0]->clave === $pass;
+            $where = 'email="'.$email.'"';
+            $user = Admin::where($where);
+            $role = Constants::$ADMIN_ROLE;
+
+            if (count($user) === 0) {
+                $user = Student::where('login="'.$email.'"');
+                $role = Constants::$STUDENT_ROLE;
             }
+
+            if (count($user) === 0) {
+                $user = Teacher::where($where);
+                $role = Constants::$TEACHER_ROLE;
+            }
+
+            if (count($user) > 0) $validCredentials = $user[0]->clave === $pass;
+            else $role = '';
         }
 
         if ($validCredentials) {
             $_SESSION['loggedIn'] = true;
-            $this->redirect($_SERVER['HTTP_REFERER']."admin");
+            $_SESSION['user'] = $user;
+            $_SESSION['role'] = $role;
+
+            if ($role === Constants::$ADMIN_ROLE) $this->redirect($_SERVER['HTTP_REFERER']."admin");
+            if ($role === Constants::$TEACHER_ROLE) $this->redirect($_SERVER['HTTP_REFERER']."profesor");
+            else $this->redirect($_SERVER['HTTP_REFERER']."estudiante");
         } else {
             $this->redirect($_SERVER['HTTP_REFERER']);
         }

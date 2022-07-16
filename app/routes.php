@@ -10,6 +10,8 @@ use app\controllers\TeacherUserController;
 use app\controllers\StudentUserController;
 use app\controllers\SubjectController;
 use app\controllers\ScheduleController;
+use app\controllers\StudentPanelController;
+use app\controllers\TeacherPanelController;
 use app\middlewares\AuthMiddleware;
 
 $router = new Router();
@@ -19,6 +21,8 @@ $router->post('/login', AuthController::class, 'login');
 $router->get('/logout', AuthController::class, 'logout');
 
 $router->get('/admin', AdminPanelController::class, 'dashboard', AuthMiddleware::class);
+$router->get('/estudiante', StudentPanelController::class, 'dashboard', AuthMiddleware::class);
+$router->get('/profesor', TeacherPanelController::class, 'dashboard', AuthMiddleware::class);
 
 $router->get('/admin/administradores', AdminPanelController::class, 'admins', AuthMiddleware::class);
 $router->post('/admin/administradores', AdminUserController::class, 'create', AuthMiddleware::class);

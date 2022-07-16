@@ -6,6 +6,7 @@ use Symfony\Component\Dotenv\Dotenv;
 class Autoload {
     public function load() {
         $this->loadEnv();
+        $this->loadFiles('utils');
         $this->loadFiles('core');
         $this->loadFiles('middlewares');
         $this->loadFiles('models');
