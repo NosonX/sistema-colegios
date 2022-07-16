@@ -54,9 +54,9 @@ class Router {
             $controller = $routeFound->getController();
             $method = $routeFound->getMethod();
             $middleware = $routeFound->getMiddleware();
+            $uriParams = $this->getUriParams($uri, $routeFound->getUri());
 
             if (isset($middleware) && $middleware !== null) {
-                $uriParams = $this->getUriParams($uri, $routeFound->getUri());
                 $callback = function () use ($controller, $method, $uriParams) {
                     (new $controller)->$method(...$uriParams);
                 };

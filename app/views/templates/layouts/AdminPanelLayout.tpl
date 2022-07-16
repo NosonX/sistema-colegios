@@ -9,7 +9,7 @@
                 {include '../components/AdminSideNav.tpl'}
             </div>
 
-            <a href="./logout" class="btn btn-outline-danger">
+            <a href="{$url}/logout" class="btn btn-outline-danger">
                 Salir
                 <i class="bi bi-box-arrow-right ms-2"></i>
             </a>

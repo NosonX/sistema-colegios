@@ -5,14 +5,14 @@
             <span class="input-group-text">
                 <i class="bi bi-envelope"></i>
             </span>
-        <input type="text" class="form-control" placeholder="Correo electrónico" name="email">
+        <input type="text" class="form-control" placeholder="Correo electrónico" name="email" required>
     </div>
 
     <div class="input-group mb-3">
             <span class="input-group-text">
                 <i class="bi bi-key"></i>
             </span>
-        <input type="password" class="form-control" placeholder="Contraseña" name="password">
+        <input type="password" class="form-control" placeholder="Contraseña" name="clave" required>
     </div>
 
     <button type="submit" class="btn btn-primary mb-3 mt-3">Ingresar</button>

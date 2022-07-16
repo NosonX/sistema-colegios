@@ -4,7 +4,8 @@ namespace app\middlewares;
 
 class AuthMiddleware {
     public static function run($callback) {
-        $isAuth = false;
+        session_start();
+        $isAuth = $_SESSION['loggedIn'] ?? false;
         if ($isAuth) {
             $callback();
         } else {
