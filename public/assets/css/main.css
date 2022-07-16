@@ -10248,3 +10248,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.has-danger input {
+  border-color: #dc3545;
+}
+
+.has-success input {
+  border-color: #198754;
+}
