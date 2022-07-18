@@ -68,20 +68,6 @@
                 data-pristine-required-message="Nombre de usuario requerido"
         />
     </div>
-    <div class="form-group">
-        <label for="clave" class="form-label">Contraseña</label>
-        <input
-                type="password"
-                class="form-control"
-                name="clave"
-                minlength="8"
-                data-pristine-minlength-message="La clave no debe tener menos de 8 caracteres"
-                maxlength="100"
-                data-pristine-maxlength-message="La clave no debe tener más de 100 caracteres"
-                required
-                data-pristine-required-message="Clave requerida"
-        />
-    </div>
 {/block}
 
 {block name="content"}
