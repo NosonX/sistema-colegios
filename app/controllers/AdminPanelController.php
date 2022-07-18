@@ -17,7 +17,7 @@ class AdminPanelController extends Controller {
 
     public function admins() {
         $admins = Admin::findAll();
-        $this->render('panels/admin/Admins.tpl', ['admins' => $admins->toArray()]);
+        $this->render('panels/admin/administrators/admins.tpl', ['admins' => $admins->toArray()]);
     }
 
     public function levels() {
