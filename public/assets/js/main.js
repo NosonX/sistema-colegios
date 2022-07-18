@@ -3213,6 +3213,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/js/bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_js_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/bootstrap */ "./src/js/modules/bootstrap.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tableActions */ "./src/js/modules/tableActions.js");
+/* harmony import */ var _modules_tableActions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_tableActions__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/forms */ "./src/js/modules/forms.js");
+
+
 
 
 
@@ -3246,6 +3251,129 @@ var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 var tooltipList = _toConsumableArray(tooltipTriggerList).map(function (tooltipTriggerEl) {
   return new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Tooltip(tooltipTriggerEl);
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/forms.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/forms.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var pristinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pristinejs */ "./node_modules/pristinejs/dist/pristine.js");
+/* harmony import */ var pristinejs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pristinejs__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var createForm = document.getElementById('createForm');
+var editForm = document.getElementById('editForm');
+var submitCreateFormButton = document.getElementById('createModal').querySelector('button[type="submit"]');
+var submitEditFormButton = document.getElementById('editModal').querySelector('button[type="submit"]');
+var config = {
+  // class of the parent element where the error/success class is added
+  classTo: 'form-group',
+  errorClass: 'has-danger',
+  successClass: 'has-success',
+  // class of the parent element where error text element is appended
+  errorTextParent: 'form-group',
+  // type of element to create for the error text
+  errorTextTag: 'div',
+  // class of the error text element
+  errorTextClass: 'text-danger'
+};
+
+var submitForm = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event, form) {
+    var pristine, isValid;
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            event.preventDefault();
+            pristine = new (pristinejs__WEBPACK_IMPORTED_MODULE_0___default())(form, config);
+            isValid = pristine.validate();
+
+            if (isValid) {
+              form.submit();
+            }
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function submitForm(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+submitCreateFormButton.addEventListener('click', function (event) {
+  return submitForm(event, createForm);
+});
+submitEditFormButton.addEventListener('click', function (event) {
+  return submitForm(event, editForm);
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/tableActions.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/tableActions.js ***!
+  \****************************************/
+/***/ (() => {
+
+var tableEditButtons = document.querySelectorAll('[data-table-action="edit"]');
+var tableDeleteButtons = document.querySelectorAll('[data-table-action="delete"]');
+tableDeleteButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    return tableActionClick(event, 'eliminar', 'deleteForm');
+  });
+});
+tableEditButtons.forEach(function (button) {
+  return button.addEventListener('click', function (event) {
+    var formId = 'editForm';
+    tableActionClick(event, 'actualizar', formId);
+    setEditFormFields(event, formId);
+  });
+});
+
+var tableActionClick = function tableActionClick(event, action, formId) {
+  var id = event.currentTarget.getAttribute('data-record-id');
+  var url = "".concat(window.location.href, "/").concat(action, "/").concat(id);
+  var form = document.getElementById(formId);
+  form.setAttribute('action', url);
+};
+
+var setEditFormFields = function setEditFormFields(event, formId) {
+  var record = JSON.parse(event.currentTarget.getAttribute('data-record'));
+  var form = document.getElementById(formId);
+  var fields = form.querySelectorAll('input');
+  var selects = form.querySelectorAll('select');
+  fields.forEach(function (field) {
+    var name = field.name;
+    field.value = record[name];
+  });
+  selects.forEach(function (select) {
+    var name = select.name;
+    var options = select.querySelectorAll('option');
+    options.forEach(function (option) {
+      if (option.value == record[name]) {
+        option.selected = true;
+      }
+    });
+  });
+};
 
 /***/ }),
 
@@ -13340,6 +13468,414 @@ defineJQueryPlugin(Toast);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./node_modules/pristinejs/dist/pristine.js":
+/*!**************************************************!*\
+  !*** ./node_modules/pristinejs/dist/pristine.js ***!
+  \**************************************************/
+/***/ (function(module) {
+
+(function (global, factory) {
+     true ? module.exports = factory() :
+    0;
+}(this, (function () { 'use strict';
+
+    var lang = {
+        required: "This field is required",
+        email: "This field requires a valid e-mail address",
+        number: "This field requires a number",
+        integer: "This field requires an integer value",
+        url: "This field requires a valid website URL",
+        tel: "This field requires a valid telephone number",
+        maxlength: "This fields length must be < ${1}",
+        minlength: "This fields length must be > ${1}",
+        min: "Minimum value for this field is ${1}",
+        max: "Maximum value for this field is ${1}",
+        pattern: "Please match the requested format"
+    };
+
+    function findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls)) {}
+        return el;
+    }
+
+    function tmpl(o) {
+        var _arguments = arguments;
+
+        return this.replace(/\${([^{}]*)}/g, function (a, b) {
+            return _arguments[b];
+        });
+    }
+
+    function groupedElemCount(input) {
+        return input.pristine.self.form.querySelectorAll('input[name="' + input.getAttribute('name') + '"]:checked').length;
+    }
+
+    function mergeConfig(obj1, obj2) {
+        for (var attr in obj2) {
+            if (!(attr in obj1)) {
+                obj1[attr] = obj2[attr];
+            }
+        }
+        return obj1;
+    }
+
+    function isFunction(obj) {
+        return !!(obj && obj.constructor && obj.call && obj.apply);
+    }
+
+    var defaultConfig = {
+        classTo: 'form-group',
+        errorClass: 'has-danger',
+        successClass: 'has-success',
+        errorTextParent: 'form-group',
+        errorTextTag: 'div',
+        errorTextClass: 'text-help'
+    };
+
+    var PRISTINE_ERROR = 'pristine-error';
+    var SELECTOR = "input:not([type^=hidden]):not([type^=submit]), select, textarea";
+    var ALLOWED_ATTRIBUTES = ["required", "min", "max", 'minlength', 'maxlength', 'pattern'];
+    var EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    var validators = {};
+
+    var _ = function _(name, validator) {
+        validator.name = name;
+        if (!validator.msg) validator.msg = lang[name];
+        if (validator.priority === undefined) validator.priority = 1;
+        validators[name] = validator;
+    };
+
+    _('text', { fn: function fn(val) {
+            return true;
+        }, priority: 0 });
+    _('required', { fn: function fn(val) {
+            return this.type === 'radio' || this.type === 'checkbox' ? groupedElemCount(this) : val !== undefined && val !== '';
+        }, priority: 99, halt: true });
+    _('email', { fn: function fn(val) {
+            return !val || EMAIL_REGEX.test(val);
+        } });
+    _('number', { fn: function fn(val) {
+            return !val || !isNaN(parseFloat(val));
+        }, priority: 2 });
+    _('integer', { fn: function fn(val) {
+            return !val || /^\d+$/.test(val);
+        } });
+    _('minlength', { fn: function fn(val, length) {
+            return !val || val.length >= parseInt(length);
+        } });
+    _('maxlength', { fn: function fn(val, length) {
+            return !val || val.length <= parseInt(length);
+        } });
+    _('min', { fn: function fn(val, limit) {
+            return !val || (this.type === 'checkbox' ? groupedElemCount(this) >= parseInt(limit) : parseFloat(val) >= parseFloat(limit));
+        } });
+    _('max', { fn: function fn(val, limit) {
+            return !val || (this.type === 'checkbox' ? groupedElemCount(this) <= parseInt(limit) : parseFloat(val) <= parseFloat(limit));
+        } });
+    _('pattern', { fn: function fn(val, pattern) {
+            var m = pattern.match(new RegExp('^/(.*?)/([gimy]*)$'));return !val || new RegExp(m[1], m[2]).test(val);
+        } });
+
+    function Pristine(form, config, live) {
+
+        var self = this;
+
+        init(form, config, live);
+
+        function init(form, config, live) {
+
+            form.setAttribute("novalidate", "true");
+
+            self.form = form;
+            self.config = mergeConfig(config || {}, defaultConfig);
+            self.live = !(live === false);
+            self.fields = Array.from(form.querySelectorAll(SELECTOR)).map(function (input) {
+
+                var fns = [];
+                var params = {};
+                var messages = {};
+
+                [].forEach.call(input.attributes, function (attr) {
+                    if (/^data-pristine-/.test(attr.name)) {
+                        var name = attr.name.substr(14);
+                        if (name.endsWith('-message')) {
+                            messages[name.slice(0, name.length - 8)] = attr.value;
+                            return;
+                        }
+                        if (name === 'type') name = attr.value;
+                        _addValidatorToField(fns, params, name, attr.value);
+                    } else if (~ALLOWED_ATTRIBUTES.indexOf(attr.name)) {
+                        _addValidatorToField(fns, params, attr.name, attr.value);
+                    } else if (attr.name === 'type') {
+                        _addValidatorToField(fns, params, attr.value);
+                    }
+                });
+
+                fns.sort(function (a, b) {
+                    return b.priority - a.priority;
+                });
+
+                self.live && input.addEventListener(!~['radio', 'checkbox'].indexOf(input.getAttribute('type')) ? 'input' : 'change', function (e) {
+                    self.validate(e.target);
+                }.bind(self));
+
+                return input.pristine = { input: input, validators: fns, params: params, messages: messages, self: self };
+            }.bind(self));
+        }
+
+        function _addValidatorToField(fns, params, name, value) {
+            var validator = validators[name];
+            if (validator) {
+                fns.push(validator);
+                if (value) {
+                    var valueParams = value.split(',');
+                    valueParams.unshift(null); // placeholder for input's value
+                    params[name] = valueParams;
+                }
+            }
+        }
+
+        /***
+         * Checks whether the form/input elements are valid
+         * @param input => input element(s) or a jquery selector, null for full form validation
+         * @param silent => do not show error messages, just return true/false
+         * @returns {boolean} return true when valid false otherwise
+         */
+        self.validate = function (input, silent) {
+            silent = input && silent === true || input === true;
+            var fields = self.fields;
+            if (input !== true && input !== false) {
+                if (input instanceof HTMLElement) {
+                    fields = [input.pristine];
+                } else if (input instanceof NodeList || input instanceof (window.$ || Array) || input instanceof Array) {
+                    fields = Array.from(input).map(function (el) {
+                        return el.pristine;
+                    });
+                }
+            }
+
+            var valid = true;
+
+            for (var i = 0; fields[i]; i++) {
+                var field = fields[i];
+                if (_validateField(field)) {
+                    !silent && _showSuccess(field);
+                } else {
+                    valid = false;
+                    !silent && _showError(field);
+                }
+            }
+            return valid;
+        };
+
+        /***
+         * Get errors of a specific field or the whole form
+         * @param input
+         * @returns {Array|*}
+         */
+        self.getErrors = function (input) {
+            if (!input) {
+                var erroneousFields = [];
+                for (var i = 0; i < self.fields.length; i++) {
+                    var field = self.fields[i];
+                    if (field.errors.length) {
+                        erroneousFields.push({ input: field.input, errors: field.errors });
+                    }
+                }
+                return erroneousFields;
+            }
+            if (input.tagName && input.tagName.toLowerCase() === "select") {
+                return input.pristine.errors;
+            }
+            return input.length ? input[0].pristine.errors : input.pristine.errors;
+        };
+
+        /***
+         * Validates a single field, all validator functions are called and error messages are generated
+         * when a validator fails
+         * @param field
+         * @returns {boolean}
+         * @private
+         */
+        function _validateField(field) {
+            var errors = [];
+            var valid = true;
+            for (var i = 0; field.validators[i]; i++) {
+                var validator = field.validators[i];
+                var params = field.params[validator.name] ? field.params[validator.name] : [];
+                params[0] = field.input.value;
+                if (!validator.fn.apply(field.input, params)) {
+                    valid = false;
+
+                    if (isFunction(validator.msg)) {
+                        errors.push(validator.msg(field.input.value, params));
+                    } else {
+                        var error = field.messages[validator.name] || validator.msg;
+                        errors.push(tmpl.apply(error, params));
+                    }
+
+                    if (validator.halt === true) {
+                        break;
+                    }
+                }
+            }
+            field.errors = errors;
+            return valid;
+        }
+
+        /***
+         *
+         * @param elem => The dom element where the validator is applied to
+         * @param fn => validator function
+         * @param msg => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
+         * so on are for the attribute values
+         * @param priority => priority of the validator function, higher valued function gets called first.
+         * @param halt => whether validation should stop for this field after current validation function
+         */
+        self.addValidator = function (elem, fn, msg, priority, halt) {
+            if (elem instanceof HTMLElement) {
+                elem.pristine.validators.push({ fn: fn, msg: msg, priority: priority, halt: halt });
+                elem.pristine.validators.sort(function (a, b) {
+                    return b.priority - a.priority;
+                });
+            } else {
+                console.warn("The parameter elem must be a dom element");
+            }
+        };
+
+        /***
+         * An utility function that returns a 2-element array, first one is the element where error/success class is
+         * applied. 2nd one is the element where error message is displayed. 2nd element is created if doesn't exist and cached.
+         * @param field
+         * @returns {*}
+         * @private
+         */
+        function _getErrorElements(field) {
+            if (field.errorElements) {
+                return field.errorElements;
+            }
+            var errorClassElement = findAncestor(field.input, self.config.classTo);
+            var errorTextParent = null,
+                errorTextElement = null;
+            if (self.config.classTo === self.config.errorTextParent) {
+                errorTextParent = errorClassElement;
+            } else {
+                errorTextParent = errorClassElement.querySelector('.' + self.config.errorTextParent);
+            }
+            if (errorTextParent) {
+                errorTextElement = errorTextParent.querySelector('.' + PRISTINE_ERROR);
+                if (!errorTextElement) {
+                    errorTextElement = document.createElement(self.config.errorTextTag);
+                    errorTextElement.className = PRISTINE_ERROR + ' ' + self.config.errorTextClass;
+                    errorTextParent.appendChild(errorTextElement);
+                    errorTextElement.pristineDisplay = errorTextElement.style.display;
+                }
+            }
+            return field.errorElements = [errorClassElement, errorTextElement];
+        }
+
+        function _showError(field) {
+            var errorElements = _getErrorElements(field);
+            var errorClassElement = errorElements[0],
+                errorTextElement = errorElements[1];
+
+            if (errorClassElement) {
+                errorClassElement.classList.remove(self.config.successClass);
+                errorClassElement.classList.add(self.config.errorClass);
+            }
+            if (errorTextElement) {
+                errorTextElement.innerHTML = field.errors.join('<br/>');
+                errorTextElement.style.display = errorTextElement.pristineDisplay || '';
+            }
+        }
+
+        /***
+         * Adds error to a specific field
+         * @param input
+         * @param error
+         */
+        self.addError = function (input, error) {
+            input = input.length ? input[0] : input;
+            input.pristine.errors.push(error);
+            _showError(input.pristine);
+        };
+
+        function _removeError(field) {
+            var errorElements = _getErrorElements(field);
+            var errorClassElement = errorElements[0],
+                errorTextElement = errorElements[1];
+            if (errorClassElement) {
+                // IE > 9 doesn't support multiple class removal
+                errorClassElement.classList.remove(self.config.errorClass);
+                errorClassElement.classList.remove(self.config.successClass);
+            }
+            if (errorTextElement) {
+                errorTextElement.innerHTML = '';
+                errorTextElement.style.display = 'none';
+            }
+            return errorElements;
+        }
+
+        function _showSuccess(field) {
+            var errorClassElement = _removeError(field)[0];
+            errorClassElement && errorClassElement.classList.add(self.config.successClass);
+        }
+
+        /***
+         * Resets the errors
+         */
+        self.reset = function () {
+            for (var i = 0; self.fields[i]; i++) {
+                self.fields[i].errorElements = null;
+            }
+            Array.from(self.form.querySelectorAll('.' + PRISTINE_ERROR)).map(function (elem) {
+                elem.parentNode.removeChild(elem);
+            });
+            Array.from(self.form.querySelectorAll('.' + self.config.classTo)).map(function (elem) {
+                elem.classList.remove(self.config.successClass);
+                elem.classList.remove(self.config.errorClass);
+            });
+        };
+
+        /***
+         * Resets the errors and deletes all pristine fields
+         */
+        self.destroy = function () {
+            self.reset();
+            self.fields.forEach(function (field) {
+                delete field.input.pristine;
+            });
+            self.fields = [];
+        };
+
+        self.setGlobalConfig = function (config) {
+            defaultConfig = config;
+        };
+
+        return self;
+    }
+
+    /***
+     *
+     * @param name => Name of the global validator
+     * @param fn => validator function
+     * @param msg => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
+     * so on are for the attribute values
+     * @param priority => priority of the validator function, higher valued function gets called first.
+     * @param halt => whether validation should stop for this field after current validation function
+     */
+    Pristine.addValidator = function (name, fn, msg, priority, halt) {
+        _(name, { fn: fn, msg: msg, priority: priority, halt: halt });
+    };
+
+    return Pristine;
+
+})));
 
 
 /***/ })
