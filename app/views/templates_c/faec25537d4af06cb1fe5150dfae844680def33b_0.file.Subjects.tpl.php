@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-12 01:30:38
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Subjects.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/subjects.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'faec25537d4af06cb1fe5150dfae844680def33b' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Subjects.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/subjects.tpl',
       1 => 1657589436,
       2 => 'file',
     ),

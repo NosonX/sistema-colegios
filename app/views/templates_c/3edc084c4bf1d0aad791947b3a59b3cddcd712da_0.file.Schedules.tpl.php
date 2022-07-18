@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-16 16:03:54
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Schedules.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/schedules.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '3edc084c4bf1d0aad791947b3a59b3cddcd712da' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Schedules.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/schedules.tpl',
       1 => 1657987433,
       2 => 'file',
     ),

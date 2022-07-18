@@ -22,18 +22,18 @@ class AdminPanelController extends Controller {
 
     public function levels() {
         $levels = Level::findAll();
-        $this->render('panels/admin/Levels.tpl', ['levels' => $levels->toArray()]);
+        $this->render('panels/admin/levels/levels.tpl', ['levels' => $levels->toArray()]);
     }
 
     public function teachers() {
         $teachers = Teacher::findAll();
-        $this->render('panels/admin/Teachers.tpl', ['teachers' => $teachers->toArray()]);
+        $this->render('panels/admin/teachers/teachers.tpl', ['teachers' => $teachers->toArray()]);
     }
 
     public function students() {
         $students = Student::findAll('withLevel');
         $levels = Level::findAll();
-        $this->render('panels/admin/Students.tpl', [
+        $this->render('panels/admin/students/students.tpl', [
             'students' => $students->toArray(),
             'levels' => $levels
         ]);
@@ -43,7 +43,7 @@ class AdminPanelController extends Controller {
         $subjects = Subject::findAll('withLevel', 'withTeacher');
         $levels = Level::findAll();
         $teachers = Teacher::findAll();
-        $this->render('panels/admin/Subjects.tpl', [
+        $this->render('panels/admin/subjects/subjects.tpl', [
             'subjects' => $subjects->toArray(),
             'levels' => $levels,
             'teachers' => $teachers
@@ -53,7 +53,7 @@ class AdminPanelController extends Controller {
     public function schedules() {
         $schedules = Schedule::findAll('withSubject');
         $subjects = Subject::findAll('withLevel');
-        $this->render('panels/admin/Schedules.tpl', [
+        $this->render('panels/admin/schedules/schedules.tpl', [
             'schedules' => $schedules->toArray(),
             'subjects' => $subjects->toArray()
         ]);
