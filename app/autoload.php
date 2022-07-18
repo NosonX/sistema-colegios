@@ -1,14 +1,23 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+use Symfony\Component\Dotenv\Dotenv;
+
 class Autoload {
     public function load() {
-        require_once __DIR__ . '/../vendor/autoload.php';
-
+        $this->loadEnv();
+        $this->loadFiles('utils');
         $this->loadFiles('core');
+        $this->loadFiles('middlewares');
         $this->loadFiles('models');
         $this->loadFiles('views');
         $this->loadFiles('controllers');
         $this->loadRoutes();
+    }
+
+    private function loadEnv() {
+        $dotenv = new Dotenv();
+        $dotenv->loadEnv(__DIR__.'/../.env');
     }
 
     private function loadFiles(string $directory) {

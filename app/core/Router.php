@@ -5,6 +5,7 @@ namespace app\core;
 class Router {
     private array $routes;
 
+
     public function __construct()
     {
         $this->routes = [
@@ -16,8 +17,23 @@ class Router {
         ];
     }
 
+    public function getRoutes(): array
+    {
+        return $this->routes;
+    }
+
     public function addRoute(Route $route) {
         $this->routes[$route->getHttpMethod()][] = $route;
+    }
+
+    public function get($uri, $controller, $method, $middleware = null): void
+    {
+        $this->addRoute(new Route(HttpMethod::$GET, $uri, $controller, $method, $middleware));
+    }
+
+    public function post($uri, $controller, $method, $middleware = null): void
+    {
+        $this->addRoute(new Route(HttpMethod::$POST, $uri, $controller, $method, $middleware));
     }
 
     public function run() {
@@ -37,8 +53,19 @@ class Router {
         if ($routeFound !== false) {
             $controller = $routeFound->getController();
             $method = $routeFound->getMethod();
+            $middleware = $routeFound->getMiddleware();
             $uriParams = $this->getUriParams($uri, $routeFound->getUri());
-            (new $controller)->$method(...$uriParams);
+
+            if (isset($middleware) && $middleware !== null) {
+                $callback = function () use ($controller, $method, $uriParams) {
+                    (new $controller)->$method(...$uriParams);
+                };
+                $middleware::run($callback);
+            } else {
+                (new $controller)->$method(...$uriParams);
+            }
+
+
         } else {
             echo 'ERROR 404';
         }
@@ -59,8 +86,11 @@ class Router {
                 $isEqual = true;
 
                 foreach ($requestUri as $index => $value) {
-                    if ($value !== $routeUri[$index]) {
-                        $isEqual = strpos($routeUri[$index], '$') !== false;
+                    if ($isEqual) {
+                        $isEqual = $value === $routeUri[$index];
+                        if (!$isEqual) {
+                            $isEqual = strpos($routeUri[$index], '$') !== false;
+                        }
                     }
                 }
 
