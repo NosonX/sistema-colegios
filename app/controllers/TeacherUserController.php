@@ -5,32 +5,35 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Teacher;
 
-class TeacherController extends Controller {
+class TeacherUserController extends Controller {
     function create() {
         $teacher = new Teacher();
         $teacher->login = $_POST['login'];
-        $teacher->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $teacher->clave = $password;
         $teacher->nombre = $_POST['nombre'];
         $teacher->apellidos = $_POST['apellidos'];
         $teacher->email = $_POST['email'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/profesores');
     }
 
-    function update($id) {
+    function update($id)
+    {
         $teacher = Teacher::find($id);
         $teacher->login = $_POST['login'];
-        $teacher->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $teacher->clave = $password;
         $teacher->nombre = $_POST['nombre'];
         $teacher->apellidos = $_POST['apellidos'];
         $teacher->especialista = $_POST['especialista'];
         $teacher->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/profesores');
     }
 
     function delete($id) {
         $result = Teacher::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/profesores');
     }
 }

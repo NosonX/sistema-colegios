@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-09 05:24:38
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Levels.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/levels.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '702a037a9d4a2d601f3c631e05315367c0955a1a' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/Levels.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/levels.tpl',
       1 => 1657342019,
       2 => 'file',
     ),

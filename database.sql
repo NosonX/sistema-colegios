@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 06, 2022 at 04:38 PM
+-- Generation Time: Jul 16, 2022 at 04:13 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -30,9 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `administrador` (
                                  `id` int(11) NOT NULL,
                                  `login` varchar(255) DEFAULT NULL,
-                                 `clave` varchar(50) DEFAULT NULL,
+                                 `clave` varchar(255) DEFAULT NULL,
                                  `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `administrador`
+--
+
+INSERT INTO `administrador` (`id`, `login`, `clave`, `email`) VALUES
+    (3, 'admin1', '$2y$10$iTjJ8ZdClOpS.SFD3NmU3.cFFSdrEcZUruLGHlxUH6M.uQ.QDqwMa', 'admin@mail.com');
 
 -- --------------------------------------------------------
 
@@ -43,11 +50,18 @@ CREATE TABLE `administrador` (
 CREATE TABLE `alumno` (
                           `id` int(11) NOT NULL,
                           `login` varchar(255) NOT NULL,
-                          `clave` varchar(50) NOT NULL,
+                          `clave` varchar(255) NOT NULL,
                           `nombre` varchar(100) NOT NULL,
                           `apellidos` varchar(100) NOT NULL,
                           `nivel_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `alumno`
+--
+
+INSERT INTO `alumno` (`id`, `login`, `clave`, `nombre`, `apellidos`, `nivel_id`) VALUES
+    (1, 'jram', '$2y$10$6T9bd08AjUJGC4IIw0EM7OANa.XeFCLymZe3Ov7R8n1RmyYq3JvYy', 'José', 'Ramones', 1);
 
 -- --------------------------------------------------------
 
@@ -61,6 +75,13 @@ CREATE TABLE `asignatura` (
                               `nivel_id` int(11) NOT NULL,
                               `profesor_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `asignatura`
+--
+
+INSERT INTO `asignatura` (`id`, `nombre`, `nivel_id`, `profesor_id`) VALUES
+    (1, 'Matemática', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -102,6 +123,13 @@ CREATE TABLE `horario` (
                            `asignatura_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `horario`
+--
+
+INSERT INTO `horario` (`id`, `dia`, `horaInicio`, `horaFin`, `asignatura_id`) VALUES
+    (1, '2022-07-16', '10:00:00', '11:00:00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +142,13 @@ CREATE TABLE `nivel` (
                          `curso` varchar(45) NOT NULL,
                          `aula` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `nivel`
+--
+
+INSERT INTO `nivel` (`id`, `nivel`, `curso`, `aula`) VALUES
+    (1, 'Primer Grado', 'STEM', 'A-101');
 
 -- --------------------------------------------------------
 
@@ -138,12 +173,19 @@ CREATE TABLE `nota` (
 CREATE TABLE `profesor` (
                             `id` int(11) NOT NULL,
                             `login` varchar(255) NOT NULL,
-                            `clave` varchar(50) NOT NULL,
+                            `clave` varchar(255) NOT NULL,
                             `nombre` varchar(100) NOT NULL,
                             `apellidos` varchar(100) NOT NULL,
                             `email` varchar(100) NOT NULL,
                             `especialista` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `profesor`
+--
+
+INSERT INTO `profesor` (`id`, `login`, `clave`, `nombre`, `apellidos`, `email`, `especialista`) VALUES
+    (1, 'rvilla', '$2y$10$6T9bd08AjUJGC4IIw0EM7OANa.XeFCLymZe3Ov7R8n1RmyYq3JvYy', 'Rodolfo', 'Villalobos', 'rvillalobos@mail.com', 2);
 
 --
 -- Indexes for dumped tables
@@ -228,19 +270,19 @@ ALTER TABLE `profesor`
 -- AUTO_INCREMENT for table `administrador`
 --
 ALTER TABLE `administrador`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `alumno`
 --
 ALTER TABLE `alumno`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `asignatura`
 --
 ALTER TABLE `asignatura`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `falta_asistencia`
@@ -252,13 +294,13 @@ ALTER TABLE `falta_asistencia`
 -- AUTO_INCREMENT for table `horario`
 --
 ALTER TABLE `horario`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nivel`
 --
 ALTER TABLE `nivel`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nota`
@@ -270,7 +312,7 @@ ALTER TABLE `nota`
 -- AUTO_INCREMENT for table `profesor`
 --
 ALTER TABLE `profesor`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

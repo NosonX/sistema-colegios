@@ -5,30 +5,32 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Student;
 
-class StudentController extends Controller {
+class StudentUserController extends Controller {
     function create() {
         $student = new Student();
-        $student->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $student->clave = $password;
         $student->nombre = $_POST['nombre'];
         $student->apellidos = $_POST['apellidos'];
         $student->login = $_POST['login'];
         $student->nivel_id = $_POST['nivel_id'];
         $student->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/estudiantes');
     }
 
     function update($id) {
         $student = Student::find($id);
-        $student->clave = $_POST['clave'];
+        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
+        $student->clave = $password;
         $student->nombre = $_POST['nombre'];
         $student->apellidos = $_POST['apellidos'];
         $student->nivel_id = $_POST['nivel_id'];
         $student->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/estudiantes');
     }
 
     function delete($id) {
         $result = Student::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/estudiantes');
     }
 }

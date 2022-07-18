@@ -9,11 +9,11 @@ use app\core\Collection;
 abstract class Entity {
     protected string $table;
 
-    protected function with($entity, $localKey) {
+    protected function with($entity, $localKey, $relationships = []) {
         $newProperty = strtolower($entity);
         $newProperty = explode('\\', $newProperty);
         $newProperty = $newProperty[count($newProperty) - 1];
-        $this->{$newProperty} = $entity::find($this->$localKey);
+        $this->{$newProperty} = $entity::find($this->$localKey, $relationships);
     }
 
     public static function getTableName(): string {
@@ -62,12 +62,18 @@ abstract class Entity {
         return self::resultsToEntities($results);
     }
 
-    public static function find($id) {
+    public static function find($id, $relationships = []) {
         $query = 'id='.$id;
         $results = self::where($query);
 
         if (count($results) > 0) {
-            return $results[0];
+            $result = $results[0];
+            if (isset($result)) {
+                foreach ($relationships as $relationship) {
+                    $result->{$relationship}();
+                }
+                return $result;
+            }
         }
 
         return null;

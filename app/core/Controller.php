@@ -18,8 +18,8 @@ abstract class Controller {
         }
 
         $uri = $_REQUEST['uri'] ?? '';
-        $publicDir = str_replace('/index.php', '', $_SERVER['PHP_SELF']);
-        $url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].str_replace('/public', '', $publicDir);
+        $publicDir = $this->getPublicDir();
+        $url = $this->getUrl();
 
         $this->templateEngine->assign('uri', $uri);
         $this->templateEngine->assign('publicDir', $publicDir);
@@ -29,7 +29,15 @@ abstract class Controller {
     }
 
     protected function redirect($location) {
-        header("Location: ".$location, TRUE, 302);
+        header("Location: ".$this->getUrl().$location, TRUE, 302);
         die();
+    }
+
+    protected function getPublicDir(): string {
+        return str_replace('/index.php', '', $_SERVER['PHP_SELF']);
+    }
+
+    protected function getUrl(): string {
+        return $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].str_replace('/public', '', $this->getPublicDir());
     }
 }

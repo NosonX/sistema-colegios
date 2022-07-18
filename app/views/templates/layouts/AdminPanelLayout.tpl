@@ -9,7 +9,7 @@
                 {include '../components/AdminSideNav.tpl'}
             </div>
 
-            <a href="./logout" class="btn btn-outline-danger">
+            <a href="{$url}/logout" class="btn btn-outline-danger">
                 Salir
                 <i class="bi bi-box-arrow-right ms-2"></i>
             </a>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button form="createForm" type="submit" class="btn btn-primary">Crear</button>
+                            <button type="submit" class="btn btn-primary">Crear</button>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button form="editForm" type="submit" class="btn btn-primary">Actualizar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
                         </div>
                     </div>
                 </div>

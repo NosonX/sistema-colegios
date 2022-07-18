@@ -12,7 +12,7 @@ class LevelController extends Controller {
         $level->curso = $_POST['curso'];
         $level->aula = $_POST['aula'];
         $level->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/niveles');
     }
 
     public function update($id) {
@@ -21,11 +21,11 @@ class LevelController extends Controller {
         $level->curso = $_POST['curso'];
         $level->aula = $_POST['aula'];
         $level->save();
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/niveles');
     }
 
     public function delete($id) {
         $result = Level::delete($id);
-        $this->redirect($_SERVER['HTTP_REFERER']);
+        $this->redirect('/admin/niveles');
     }
 }
