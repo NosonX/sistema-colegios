@@ -1,5 +1,8 @@
 <div class="form-group mb-3">
-    <label for="nombre" class="form-label">Nombre</label>
+    <label for="nombre" class="form-label">
+        Nombre
+        <small class="text-muted"> (requerido)</small>
+    </label>
     <input
             type="text"
             class="form-control"
@@ -11,7 +14,10 @@
 </div>
 
 <div class="form-group mb-3">
-    <label for="apellidos" class="form-label">Apellidos</label>
+    <label for="apellidos" class="form-label">
+        Apellidos
+        <small class="text-muted"> (requerido)</small>
+    </label>
     <input
             type="text"
             class="form-control"
@@ -23,7 +29,10 @@
 </div>
 
 <div class="form-group mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
+    <label for="email" class="form-label">
+        Correo electrónico
+        <small class="text-muted"> (requerido)</small>
+    </label>
     <input
             type="text"
             class="form-control"
@@ -35,7 +44,10 @@
 </div>
 
 <div class="form-group mb-3">
-    <label for="login" class="form-label">Nombre de Usuario</label>
+    <label for="login" class="form-label">
+        Nombre de Usuario
+        <small class="text-muted"> (requerido)</small>
+    </label>
     <input
             type="text"
             class="form-control"
@@ -47,7 +59,10 @@
 </div>
 
 <div class="form-group mb-3">
-    <label for="clave" class="form-label">Contraseña</label>
+    <label for="clave" class="form-label">
+        Contraseña
+        <small class="text-muted"> (requerido)</small>
+    </label>
     <input
             type="password"
             class="form-control"
