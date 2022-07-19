@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-16 17:54:59
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/admins.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/admins.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,14 +11,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'ab574eb912a67126cda15db074c8e1bf3dabbd9f' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/admins.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/admins.tpl',
       1 => 1657994098,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../components/Table.tpl' => 1,
+    'file:../../components/table.tpl' => 1,
   ),
 ),false)) {
 function content_62d2fb73a77248_60377215 (Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92940303662d2fb73a
 
 <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_191592946162d2fb73a70858_05549731', "content");
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/AdminPanelLayout.tpl');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/admin_layout.tpl');
 }
 /* {block "title"} */
 class Block_59857250162d2fb73a69fa0_44084975 extends Smarty_Internal_Block
@@ -185,7 +185,7 @@ public $subBlocks = array (
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:../../components/Table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Email'=>'email','Nombre de Usuario'=>'login'),'items'=>$_smarty_tpl->tpl_vars['admins']->value), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender('file:../../components/table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Email'=>'email','Nombre de Usuario'=>'login'),'items'=>$_smarty_tpl->tpl_vars['admins']->value), 0, false);
 }
 }
 /* {/block "content"} */
