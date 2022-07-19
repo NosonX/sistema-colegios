@@ -9,7 +9,7 @@
 {/block}
 
 {block name="editFormContent"}
-    {include './studentsForm.tpl'}
+    {include './studentsForm.tpl' isEditForm=true}
 {/block}
 
 {block name="content"}

@@ -1,8 +1,13 @@
-<div>
+<div class="form-group mb-3">
     <label for="nombre" class="form-label">Nombre</label>
-    <input type="text" class="form-control" name="nombre" />
+    <input
+            type="text"
+            class="form-control"
+            name="nombre"
+    />
 </div>
-<div>
+
+<div class="form-group mb-3">
     <label for="nivel_id" class="form-label">Nivel</label>
     <select class="form-select" name="nivel_id">
         {foreach item=level from=$levels}
@@ -10,7 +15,8 @@
         {/foreach}
     </select>
 </div>
-<div>
+
+<div class="form-group mb-3">
     <label for="profesor_id" class="form-label">Profesor</label>
     <select class="form-select" name="profesor_id">
         {foreach item=teacher from=$teachers}
