@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-05 00:51:32
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/AdminPanel.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/admin_dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '8df4d9349fde0b5232a3b2a1e040e202fa56c569' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/AdminPanel.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/admin_dashboard.tpl',
       1 => 1656982284,
       2 => 'file',
     ),
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177983240162c38b14f1f314_42249033', "content");
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/AdminPanelLayout.tpl');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/admin_layout.tpl');
 }
 /* {block "content"} */
 class Block_177983240162c38b14f1f314_42249033 extends Smarty_Internal_Block

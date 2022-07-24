@@ -20,8 +20,6 @@ class AdminUserController extends Controller {
         $admin = Admin::find($id);
         $admin->login = $_POST['login'];
         $admin->email = $_POST['email'];
-        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
-        $admin->clave = $password;
         $admin->save();
         $this->redirect('/admin/administradores');
     }
