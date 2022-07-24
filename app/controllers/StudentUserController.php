@@ -20,10 +20,9 @@ class StudentUserController extends Controller {
 
     function update($id) {
         $student = Student::find($id);
-        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
-        $student->clave = $password;
         $student->nombre = $_POST['nombre'];
         $student->apellidos = $_POST['apellidos'];
+        $student->login = $_POST['login'];
         $student->nivel_id = $_POST['nivel_id'];
         $student->save();
         $this->redirect('/admin/estudiantes');

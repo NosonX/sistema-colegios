@@ -25,6 +25,11 @@ abstract class Controller {
         $this->templateEngine->assign('publicDir', $publicDir);
         $this->templateEngine->assign('url', $url);
 
+        if (isset($_SESSION['role'])) {
+            $this->templateEngine->assign('role', $_SESSION['role']);
+        }
+
+
         $this->templateEngine->display($file);
     }
 

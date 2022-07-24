@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-16 15:09:39
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Login.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,19 +11,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'fb6af82dc31ee0bd3f354780aae59c54a3a73a40' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/Login.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/login.tpl',
       1 => 1657984179,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:modules/Header.tpl' => 1,
-    'file:modules/Footer.tpl' => 1,
+    'file:modules/header.tpl' => 1,
+    'file:modules/footer.tpl' => 1,
   ),
 ),false)) {
 function content_62d2d4b3ebb8b4_77252629 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender('file:modules/Header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender('file:modules/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <main class="vh-100 vw-100 d-flex align-items-center justify-content-center">
@@ -49,6 +49,6 @@ $_smarty_tpl->_subTemplateRender('file:modules/Header.tpl', $_smarty_tpl->cache_
     </form>
 </main>
 
-<?php $_smarty_tpl->_subTemplateRender('file:modules/Footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender('file:modules/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
