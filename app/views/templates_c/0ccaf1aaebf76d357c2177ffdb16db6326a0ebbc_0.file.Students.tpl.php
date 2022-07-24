@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-09 18:03:31
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/students.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/students.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,14 +11,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '0ccaf1aaebf76d357c2177ffdb16db6326a0ebbc' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/students.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/students.tpl',
       1 => 1657389809,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../components/Table.tpl' => 1,
+    'file:../../components/table.tpl' => 1,
   ),
 ),false)) {
 function content_62c9c2f3141539_77828201 (Smarty_Internal_Template $_smarty_tpl) {
@@ -51,7 +51,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_78057151862c9c2f31
 
 <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_163604323662c9c2f313a5f6_59603034', "content");
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/AdminPanelLayout.tpl');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../layouts/admin_layout.tpl');
 }
 /* {block "title"} */
 class Block_143562009562c9c2f31255d2_72731521 extends Smarty_Internal_Block
@@ -196,7 +196,7 @@ public $subBlocks = array (
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:../../components/Table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Nombre'=>'nombre','Apellidos'=>'apellidos','Nombre de Usuario'=>'login','Nivel'=>'level.nivel','Curso'=>'level.curso'),'items'=>$_smarty_tpl->tpl_vars['students']->value), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender('file:../../components/table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Nombre'=>'nombre','Apellidos'=>'apellidos','Nombre de Usuario'=>'login','Nivel'=>'level.nivel','Curso'=>'level.curso'),'items'=>$_smarty_tpl->tpl_vars['students']->value), 0, false);
 }
 }
 /* {/block "content"} */

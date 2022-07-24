@@ -23,8 +23,6 @@ class TeacherUserController extends Controller {
     {
         $teacher = Teacher::find($id);
         $teacher->login = $_POST['login'];
-        $password = password_hash($_POST['clave'], PASSWORD_DEFAULT);
-        $teacher->clave = $password;
         $teacher->nombre = $_POST['nombre'];
         $teacher->apellidos = $_POST['apellidos'];
         $teacher->especialista = $_POST['especialista'];

@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.1.1, created on 2022-07-18 01:32:48
-  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/schedules/schedules.tpl' */
+  from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/schedules/schedules.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,15 +11,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'ec3edcd7c6ee5ec70cb18901f1e5061bb700efea' => 
     array (
-      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/panels/admin/schedules/schedules.tpl',
+      0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/schedules/schedules.tpl',
       1 => 1658107967,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:./schedulesForm.tpl' => 2,
-    'file:../../../components/Table.tpl' => 1,
+    'file:./schedules_form.tpl' => 2,
+    'file:../../../components/table.tpl' => 1,
   ),
 ),false)) {
 function content_62d4b840a2fe54_31835942 (Smarty_Internal_Template $_smarty_tpl) {
@@ -50,7 +50,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_176781401262d4b840
 
 <?php 
 $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_141121209362d4b840a2b470_97599009', "content");
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../../layouts/AdminPanelLayout.tpl');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, '../../../layouts/admin_layout.tpl');
 }
 /* {block "title"} */
 class Block_36964043162d4b840a22a37_20128195 extends Smarty_Internal_Block
@@ -94,7 +94,7 @@ public $subBlocks = array (
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:./schedulesForm.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender('file:./schedules_form.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
 /* {/block "createFormContent"} */
@@ -110,7 +110,7 @@ public $subBlocks = array (
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:./schedulesForm.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+    <?php $_smarty_tpl->_subTemplateRender('file:./schedules_form.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }
 }
 /* {/block "editFormContent"} */
@@ -126,7 +126,7 @@ public $subBlocks = array (
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <?php $_smarty_tpl->_subTemplateRender('file:../../../components/Table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Día'=>'dia','Hora de Inicio'=>'horaInicio','Hora de Finalización'=>'horaFin','Asignatura'=>'subject.nombre','Nivel'=>'subject.level.nivel'),'items'=>$_smarty_tpl->tpl_vars['schedules']->value), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender('file:../../../components/table.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('headers'=>array('ID'=>'id','Día'=>'dia','Hora de Inicio'=>'horaInicio','Hora de Finalización'=>'horaFin','Asignatura'=>'subject.nombre','Nivel'=>'subject.level.nivel'),'items'=>$_smarty_tpl->tpl_vars['schedules']->value), 0, false);
 }
 }
 /* {/block "content"} */
