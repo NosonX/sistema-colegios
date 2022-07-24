@@ -17,6 +17,7 @@ abstract class Controller {
             $this->templateEngine->assign($key, $value);
         }
 
+
         $uri = $_REQUEST['uri'] ?? '';
         $publicDir = $this->getPublicDir();
         $url = $this->getUrl();
