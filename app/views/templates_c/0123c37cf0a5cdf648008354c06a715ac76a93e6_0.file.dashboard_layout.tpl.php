@@ -1,28 +1,34 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-19 03:11:55
+/* Smarty version 4.1.1, created on 2022-07-30 18:16:04
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/layouts/dashboard_layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d620fb50b668_40426029',
+  'unifunc' => 'content_62e57564ab3e41_69084999',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0123c37cf0a5cdf648008354c06a715ac76a93e6' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/layouts/dashboard_layout.tpl',
-      1 => 1658200314,
+      1 => 1659204769,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../modules/Header.tpl' => 1,
+    'file:./menus/admin_menu.tpl' => 1,
+    'file:./menus/teacher_menu.tpl' => 1,
+    'file:./menus/student_menu.tpl' => 1,
+    'file:./modals/create_modal.tpl' => 1,
+    'file:./modals/edit_modal.tpl' => 1,
+    'file:./modals/delete_modal.tpl' => 1,
     'file:../modules/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_62d620fb50b668_40426029 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62e57564ab3e41_69084999 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 $_smarty_tpl->_subTemplateRender('file:../modules/Header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -37,10 +43,15 @@ $_smarty_tpl->_subTemplateRender('file:../modules/Header.tpl', $_smarty_tpl->cac
 /assets/images/logo.svg" alt="Bundi Logo">
                 </div>
                 <hr />
-                <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8994450462d620fb509222_98419626', "sideBarContent");
-?>
-
+                <?php if ($_smarty_tpl->tpl_vars['role']->value === 'admin') {
+$_smarty_tpl->_subTemplateRender('file:./menus/admin_menu.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}?>
+                <?php if ($_smarty_tpl->tpl_vars['role']->value === 'profesor') {
+$_smarty_tpl->_subTemplateRender('file:./menus/teacher_menu.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}?>
+                <?php if ($_smarty_tpl->tpl_vars['role']->value === 'alumno') {
+$_smarty_tpl->_subTemplateRender('file:./menus/student_menu.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}?>
             </div>
 
             <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
@@ -56,36 +67,27 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8994450462d620fb50
 </small>
             </div>
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_95742384562d620fb50a764_25803265', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_543103962e57564ab0842_17363141', "content");
 ?>
 
         </div>
     </div>
 </div>
 
+<?php $_smarty_tpl->_subTemplateRender('file:./modals/create_modal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender('file:./modals/edit_modal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender('file:./modals/delete_modal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <?php $_smarty_tpl->_subTemplateRender('file:../modules/Footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
-/* {block "sideBarContent"} */
-class Block_8994450462d620fb509222_98419626 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'sideBarContent' => 
-  array (
-    0 => 'Block_8994450462d620fb509222_98419626',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block "sideBarContent"} */
 /* {block "content"} */
-class Block_95742384562d620fb50a764_25803265 extends Smarty_Internal_Block
+class Block_543103962e57564ab0842_17363141 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_95742384562d620fb50a764_25803265',
+    0 => 'Block_543103962e57564ab0842_17363141',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

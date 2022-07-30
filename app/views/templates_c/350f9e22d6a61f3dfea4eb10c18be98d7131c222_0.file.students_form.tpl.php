@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-19 01:18:39
+/* Smarty version 4.1.1, created on 2022-07-30 18:23:15
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/students/students_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d6066f6a95b7_16272910',
+  'unifunc' => 'content_62e5771382b374_85729805',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '350f9e22d6a61f3dfea4eb10c18be98d7131c222' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/students/students_form.tpl',
-      1 => 1658111321,
+      1 => 1658686026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62d6066f6a95b7_16272910 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62e5771382b374_85729805 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="form-group mb-3">
     <label for="nombre" class="form-label">
         Nombre

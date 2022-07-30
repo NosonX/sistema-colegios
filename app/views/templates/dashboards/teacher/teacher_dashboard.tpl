@@ -1,7 +1,7 @@
 {extends file='../../layouts/dashboard_layout.tpl'}
 
 {block name="sideBarContent"}
-    {include './teacher_side_menu.tpl'}
+    {include './teacher_menu.tpl'}
 {/block}
 
 {block name="content"}

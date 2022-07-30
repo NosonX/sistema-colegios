@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-19 01:18:38
+/* Smarty version 4.1.1, created on 2022-07-30 18:16:04
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/components/table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d6066e21f667_58211442',
+  'unifunc' => 'content_62e57564aefc58_82960306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '295b8f7cad1ba13c60023e1f04699c53a840d4a2' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/components/table.tpl',
-      1 => 1658108077,
+      1 => 1658686026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62d6066e21f667_58211442 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62e57564aefc58_82960306 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['items']->value) > 0) {?>
     <table class="table table-striped mt-5">
         <thead>

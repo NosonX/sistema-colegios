@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-19 01:18:38
+/* Smarty version 4.1.1, created on 2022-07-30 18:16:04
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/administrators/admins_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d6066e2286a2_89330026',
+  'unifunc' => 'content_62e57564af9757_33343226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b80fc16660c78469535966c00578a4437a17ef7' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/dashboards/admin/administrators/admins_form.tpl',
-      1 => 1658111385,
+      1 => 1658686026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62d6066e2286a2_89330026 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62e57564af9757_33343226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="form-group mb-3">
     <label for="email" class="form-label">
         Correo electrónico

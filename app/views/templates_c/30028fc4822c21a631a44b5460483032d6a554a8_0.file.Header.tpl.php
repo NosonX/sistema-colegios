@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.1, created on 2022-07-19 01:18:20
+/* Smarty version 4.1.1, created on 2022-07-30 18:16:04
   from '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/modules/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.1',
-  'unifunc' => 'content_62d6065c947034_12430998',
+  'unifunc' => 'content_62e57564ab94f3_86942251',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30028fc4822c21a631a44b5460483032d6a554a8' => 
     array (
       0 => '/Applications/MAMP/htdocs/sistema-colegios/app/views/templates/modules/Header.tpl',
-      1 => 1657382340,
+      1 => 1658686026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62d6065c947034_12430998 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62e57564ab94f3_86942251 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>

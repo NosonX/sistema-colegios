@@ -8,7 +8,9 @@
                     <img src="{$publicDir}/assets/images/logo.svg" alt="Bundi Logo">
                 </div>
                 <hr />
-                {block name="sideBarContent"}{/block}
+                {if $role === 'admin'}{include './menus/admin_menu.tpl'}{/if}
+                {if $role === 'profesor'}{include './menus/teacher_menu.tpl'}{/if}
+                {if $role === 'alumno'}{include './menus/student_menu.tpl'}{/if}
             </div>
 
             <a href="{$url}/logout" class="btn btn-outline-danger">
@@ -26,5 +28,8 @@
     </div>
 </div>
 
+{include './modals/create_modal.tpl'}
+{include './modals/edit_modal.tpl'}
+{include './modals/delete_modal.tpl'}
 
 {include '../modules/Footer.tpl'}

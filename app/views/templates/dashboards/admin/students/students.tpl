@@ -1,18 +1,15 @@
-{extends file='../../../layouts/admin_layout.tpl'}
-
-{block name="title"}Estudiantes{/block}
-
-{block name="createButtonText"}Crear estudiante{/block}
+{extends file='../../../layouts/dashboard_layout.tpl'}
 
 {block name="createFormContent"}
-    {include './studentsForm.tpl'}
+    {include './students_form.tpl'}
 {/block}
 
 {block name="editFormContent"}
-    {include './studentsForm.tpl' isEditForm=true}
+    {include './students_form.tpl' isEditForm=true}
 {/block}
 
 {block name="content"}
+    {include '../../../components/content_header.tpl' title='Estudantes' createButtonText='Crear estudiante'}
     {include '../../../components/Table.tpl'
         headers=[
             'ID' => 'id',
