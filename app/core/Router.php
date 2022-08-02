@@ -127,4 +127,10 @@ class Router {
 
         return $uri;
     }
+
+    public function group($uri, $routes, $middleware = null) {
+        foreach ($routes as $route) {
+            $this->{$route[0]}($uri.$route[1], $route[2], $route[3], $middleware);
+        }
+    }
 }
